@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fmpSubCompany">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.detail.title">Fmp Sub Company</span> {{ fmpSubCompany.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.name">Name</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.code">Code</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.adminGroupId">Admin Group Id</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.adminGroupId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.ifPublic">If Public</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.ifPublic }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.styleId">Style Id</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.styleId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.isDeleted">Is Deleted</span></dt>
+                <dd>
+                    <span>{{ fmpSubCompany.isDeleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.fmpMicroApp">Fmp Micro App</span></dt>
+                <dd>
+                    <span *ngFor="let fmpMicroApp of fmpSubCompany.fmpMicroApps; let last = last">
+                        <a [routerLink]="['/fmp-micro-app-mp', fmpMicroApp?.id, 'view']">{{ fmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpSubCompany.uucDepartmentTree">Uuc Department Tree</span></dt>
+                <dd>
+                    <span *ngFor="let uucDepartmentTree of fmpSubCompany.uucDepartmentTrees; let last = last">
+                        <a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree?.id, 'view']">{{ uucDepartmentTree.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fmp-sub-company-mp', fmpSubCompany.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

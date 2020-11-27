@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "PassingForm": {
+      "null": "",
+      "JobCode": "JobCode",
+      "Email": "Email",
+      "Mobile": "Mobile"
+    }
+  }
+}

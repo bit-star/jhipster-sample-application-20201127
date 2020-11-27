@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "managerUser": {
+      "home": {
+        "title": "Manager Users",
+        "createLabel": "Create a new Manager User",
+        "createOrEditLabel": "Create or edit a Manager User",
+        "notFound": "No Manager Users found"
+      },
+      "created": "A new Manager User is created with identifier {{ param }}",
+      "updated": "A Manager User is updated with identifier {{ param }}",
+      "deleted": "A Manager User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Manager User {{ id }}?"
+      },
+      "detail": {
+        "title": "Manager User"
+      },
+      "parentId": "Parent Id",
+      "type": "Type",
+      "uucDepartmentTrees": "Uuc Department Trees",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

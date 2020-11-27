@@ -7,6 +7,18 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "microAppGroupMp": "Micro App Group",
+        "fmpMicroAppMp": "Fmp Micro App",
+        "uucDepartmentTreeMp": "Uuc Department Tree",
+        "uucUserBaseinfoMp": "Uuc User Baseinfo",
+        "fmpSubCompanyMp": "Fmp Sub Company",
+        "fmpMicroAppTypeMp": "Fmp Micro App Type",
+        "fmpWidgetInfoMp": "Fmp Widget Info",
+        "bannerMp": "Banner",
+        "ddUserMp": "Dd User",
+        "managerUserMp": "Manager User",
+        "portalRoutingMp": "Portal Routing",
+        "ddUserPortalRoutingMp": "Dd User Portal Routing",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

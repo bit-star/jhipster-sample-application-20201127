@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ddUser">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.detail.title">Dd User</span> {{ ddUser.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.unionid">Unionid</span></dt>
+                <dd>
+                    <span>{{ ddUser.unionid }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.remark">Remark</span></dt>
+                <dd>
+                    <span>{{ ddUser.remark }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.userid">Userid</span></dt>
+                <dd>
+                    <span>{{ ddUser.userid }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isLeaderInDepts">Is Leader In Depts</span></dt>
+                <dd>
+                    <span>{{ ddUser.isLeaderInDepts }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isBoss">Is Boss</span></dt>
+                <dd>
+                    <span>{{ ddUser.isBoss }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.hiredDate">Hired Date</span></dt>
+                <dd>
+                    <span>{{ ddUser.hiredDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isSenior">Is Senior</span></dt>
+                <dd>
+                    <span>{{ ddUser.isSenior }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.tel">Tel</span></dt>
+                <dd>
+                    <span>{{ ddUser.tel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.department">Department</span></dt>
+                <dd>
+                    <span>{{ ddUser.department }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.workPlace">Work Place</span></dt>
+                <dd>
+                    <span>{{ ddUser.workPlace }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.orderInDepts">Order In Depts</span></dt>
+                <dd>
+                    <span>{{ ddUser.orderInDepts }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{ ddUser.mobile }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.errmsg">Errmsg</span></dt>
+                <dd>
+                    <span>{{ ddUser.errmsg }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.active">Active</span></dt>
+                <dd>
+                    <span>{{ ddUser.active }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.avatar">Avatar</span></dt>
+                <dd>
+                    <span>{{ ddUser.avatar }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isAdmin">Is Admin</span></dt>
+                <dd>
+                    <span>{{ ddUser.isAdmin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isHide">Is Hide</span></dt>
+                <dd>
+                    <span>{{ ddUser.isHide }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.jobnumber">Jobnumber</span></dt>
+                <dd>
+                    <span>{{ ddUser.jobnumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.name">Name</span></dt>
+                <dd>
+                    <span>{{ ddUser.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.extattr">Extattr</span></dt>
+                <dd>
+                    <span>{{ ddUser.extattr }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.stateCode">State Code</span></dt>
+                <dd>
+                    <span>{{ ddUser.stateCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.position">Position</span></dt>
+                <dd>
+                    <span>{{ ddUser.position }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.roles">Roles</span></dt>
+                <dd>
+                    <span>{{ ddUser.roles }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dd-user-mp', ddUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

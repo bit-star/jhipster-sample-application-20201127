@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "WidgeType": {
+      "null": "",
+      "OA": "OA",
+      "Personal": "Personal",
+      "General": "General"
+    }
+  }
+}

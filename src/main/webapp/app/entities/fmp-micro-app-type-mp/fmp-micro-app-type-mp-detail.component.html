@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fmpMicroAppType">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.detail.title">Fmp Micro App Type</span> {{ fmpMicroAppType.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.code">Code</span></dt>
+                <dd>
+                    <span>{{ fmpMicroAppType.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.name">Name</span></dt>
+                <dd>
+                    <span>{{ fmpMicroAppType.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.language">Language</span></dt>
+                <dd>
+                    <span>{{ fmpMicroAppType.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.portalId">Portal Id</span></dt>
+                <dd>
+                    <span>{{ fmpMicroAppType.portalId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.isDeleted">Is Deleted</span></dt>
+                <dd>
+                    <span>{{ fmpMicroAppType.isDeleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="fmpMicroAppType.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', fmpMicroAppType.fmpSubCompany?.id, 'view']">{{ fmpMicroAppType.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fmp-micro-app-type-mp', fmpMicroAppType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "ddUserPortalRouting": {
+      "home": {
+        "title": "Dd User Portal Routings",
+        "createLabel": "创建新 Dd User Portal Routing",
+        "createOrEditLabel": "创建或编辑 Dd User Portal Routing",
+        "notFound": "No Dd User Portal Routings found"
+      },
+      "created": "Dd User Portal Routing {{ param }} 创建成功",
+      "updated": "Dd User Portal Routing {{ param }} 更新成功",
+      "deleted": "Dd User Portal Routing {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Dd User Portal Routing {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Dd User Portal Routing"
+      },
+      "jobCode": "Job Code",
+      "mobile": "Mobile",
+      "microappUrl": "Microapp Url",
+      "injectionFlag": "Injection Flag",
+      "injectionApiUri": "Injection Api Uri",
+      "mucAppId": "Muc App Id"
+    }
+  }
+}

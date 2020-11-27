@@ -1,0 +1,123 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.home.title">Uuc Department Trees</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-uuc-department-tree-mp" [routerLink]="['/uuc-department-tree-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.home.createLabel">
+            Create a new Uuc Department Tree
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="uucDepartmentTrees?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.home.notFound">No uucDepartmentTrees found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="uucDepartmentTrees && uucDepartmentTrees.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="namePy"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePy">Name Py</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="code"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.code">Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="parentDepId"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepId">Parent Dep Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="parentDepName"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepName">Parent Dep Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="status"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="disporder"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.disporder">Disporder</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="namePath"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePath">Name Path</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codePath"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.codePath">Code Path</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="depIdPath"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depIdPath">Dep Id Path</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="depLevel"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depLevel">Dep Level</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="aliveFlag"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.aliveFlag">Alive Flag</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recCreateTime"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreateTime">Rec Create Time</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recCreator"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreator">Rec Creator</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recReviseTime"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recReviseTime">Rec Revise Time</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recRevisor"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recRevisor">Rec Revisor</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="deptUserCount"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.deptUserCount">Dept User Count</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="microappId"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microappId">Microapp Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enName"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.enName">En Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="onlyCode"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.onlyCode">Only Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="srcDeptId"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptId">Src Dept Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="srcDeptType"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptType">Src Dept Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="srcType"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcType">Src Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="srcDeptUcode"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptUcode">Src Dept Ucode</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="microAppGroup.id"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microAppGroup">Micro App Group</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let uucDepartmentTree of uucDepartmentTrees ;trackBy: trackId">
+                    <td><a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree.id, 'view']">{{ uucDepartmentTree.id }}</a></td>
+                    <td>{{ uucDepartmentTree.name }}</td>
+                    <td>{{ uucDepartmentTree.namePy }}</td>
+                    <td>{{ uucDepartmentTree.code }}</td>
+                    <td>{{ uucDepartmentTree.parentDepId }}</td>
+                    <td>{{ uucDepartmentTree.parentDepName }}</td>
+                    <td>{{ uucDepartmentTree.status }}</td>
+                    <td>{{ uucDepartmentTree.disporder }}</td>
+                    <td>{{ uucDepartmentTree.namePath }}</td>
+                    <td>{{ uucDepartmentTree.codePath }}</td>
+                    <td>{{ uucDepartmentTree.depIdPath }}</td>
+                    <td>{{ uucDepartmentTree.depLevel }}</td>
+                    <td>{{ uucDepartmentTree.aliveFlag }}</td>
+                    <td>{{ uucDepartmentTree.recCreateTime | date:'medium' }}</td>
+                    <td>{{ uucDepartmentTree.recCreator }}</td>
+                    <td>{{ uucDepartmentTree.recReviseTime | date:'medium' }}</td>
+                    <td>{{ uucDepartmentTree.recRevisor }}</td>
+                    <td>{{ uucDepartmentTree.deptUserCount }}</td>
+                    <td>{{ uucDepartmentTree.microappId }}</td>
+                    <td>{{ uucDepartmentTree.enName }}</td>
+                    <td>{{ uucDepartmentTree.onlyCode }}</td>
+                    <td>{{ uucDepartmentTree.srcDeptId }}</td>
+                    <td>{{ uucDepartmentTree.srcDeptType }}</td>
+                    <td>{{ uucDepartmentTree.srcType }}</td>
+                    <td>{{ uucDepartmentTree.srcDeptUcode }}</td>
+                    <td>
+                        <div *ngIf="uucDepartmentTree.microAppGroup">
+                            <a [routerLink]="['/micro-app-group-mp', uucDepartmentTree.microAppGroup?.id, 'view']" >{{ uucDepartmentTree.microAppGroup?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(uucDepartmentTree)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="uucDepartmentTrees && uucDepartmentTrees.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

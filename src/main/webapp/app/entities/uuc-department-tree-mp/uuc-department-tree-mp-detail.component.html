@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="uucDepartmentTree">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.detail.title">Uuc Department Tree</span> {{ uucDepartmentTree.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.name">Name</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePy">Name Py</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.namePy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.code">Code</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepId">Parent Dep Id</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.parentDepId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepName">Parent Dep Name</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.parentDepName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.status">Status</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.disporder">Disporder</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.disporder }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePath">Name Path</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.namePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.codePath">Code Path</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.codePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depIdPath">Dep Id Path</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.depIdPath }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depLevel">Dep Level</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.depLevel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.aliveFlag">Alive Flag</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.aliveFlag }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreateTime">Rec Create Time</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.recCreateTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreator">Rec Creator</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.recCreator }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recReviseTime">Rec Revise Time</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.recReviseTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recRevisor">Rec Revisor</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.recRevisor }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.deptUserCount">Dept User Count</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.deptUserCount }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microappId">Microapp Id</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.microappId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.enName">En Name</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.enName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.onlyCode">Only Code</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.onlyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptId">Src Dept Id</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.srcDeptId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptType">Src Dept Type</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.srcDeptType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcType">Src Type</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.srcType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptUcode">Src Dept Ucode</span></dt>
+                <dd>
+                    <span>{{ uucDepartmentTree.srcDeptUcode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microAppGroup">Micro App Group</span></dt>
+                <dd>
+                    <div *ngIf="uucDepartmentTree.microAppGroup">
+                        <a [routerLink]="['/micro-app-group-mp', uucDepartmentTree.microAppGroup?.id, 'view']">{{ uucDepartmentTree.microAppGroup?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

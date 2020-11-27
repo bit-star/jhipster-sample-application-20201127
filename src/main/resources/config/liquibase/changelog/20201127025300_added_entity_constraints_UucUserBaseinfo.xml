@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity UucUserBaseinfo.
+    -->
+    <changeSet id="20201127025300-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="uuc_user_baseinfo_id"
+                                 baseTableName="uuc_user_baseinfo_collection_fmp_micro_app"
+                                 constraintName="uuc_user_baseinfo_collection_fm_uuc_user_baseinfo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_user_baseinfo"/>
+
+        <addForeignKeyConstraint baseColumnNames="collection_fmp_micro_app_id"
+                                 baseTableName="uuc_user_baseinfo_collection_fmp_micro_app"
+                                 constraintName="uuc_user_baseinfo_collection_fm_collection_fmp_micro_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app"/>
+        
+        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
+                                 baseTableName="uuc_user_baseinfo"
+                                 constraintName="fk_uuc_user_baseinfo_micro_app_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="micro_app_group"/>
+
+    </changeSet>
+</databaseChangeLog>

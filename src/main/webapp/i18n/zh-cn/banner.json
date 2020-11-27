@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "banner": {
+      "home": {
+        "title": "Banners",
+        "createLabel": "创建新 Banner",
+        "createOrEditLabel": "创建或编辑 Banner",
+        "notFound": "No Banners found"
+      },
+      "created": "Banner {{ param }} 创建成功",
+      "updated": "Banner {{ param }} 更新成功",
+      "deleted": "Banner {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Banner {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Banner"
+      },
+      "rank": "Rank",
+      "type": "Type",
+      "status": "Status",
+      "pathUrl": "Path Url",
+      "bannerUrl": "Banner Url",
+      "remark": "Remark",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

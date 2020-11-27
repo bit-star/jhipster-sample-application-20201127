@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-banner-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.banner.home.createOrEditLabel">Create or edit a Banner</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.rank" for="field_rank">Rank</label>
+                    <input type="number" class="form-control" name="rank" id="field_rank"
+                           formControlName="rank"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="Global">{{ 'jhipsterSampleApplication20201127App.BannerType.Global' | translate }}</option>
+                        <option value="General">{{ 'jhipsterSampleApplication20201127App.BannerType.General' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="Available">{{ 'jhipsterSampleApplication20201127App.Status.Available' | translate }}</option>
+                        <option value="Unavailable">{{ 'jhipsterSampleApplication20201127App.Status.Unavailable' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.pathUrl" for="field_pathUrl">Path Url</label>
+                    <input type="text" class="form-control" name="pathUrl" id="field_pathUrl"
+                           formControlName="pathUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.bannerUrl" for="field_bannerUrl">Banner Url</label>
+                    <input type="text" class="form-control" name="bannerUrl" id="field_bannerUrl"
+                           formControlName="bannerUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                           formControlName="remark"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.banner.fmpSubCompany" for="field_fmpSubCompany">Fmp Sub Company</label>
+                    <select class="form-control" id="field_fmpSubCompany" name="fmpSubCompany" formControlName="fmpSubCompany">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fmpSubCompanyOption.id === editForm.get('fmpSubCompany')!.value?.id ? editForm.get('fmpSubCompany')!.value : fmpSubCompanyOption" *ngFor="let fmpSubCompanyOption of fmpsubcompanies; trackBy: trackById">{{ fmpSubCompanyOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

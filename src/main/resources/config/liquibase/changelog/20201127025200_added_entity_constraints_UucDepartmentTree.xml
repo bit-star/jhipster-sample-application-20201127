@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity UucDepartmentTree.
+    -->
+    <changeSet id="20201127025200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
+                                 baseTableName="uuc_department_tree"
+                                 constraintName="fk_uuc_department_tree_micro_app_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="micro_app_group"/>
+
+    </changeSet>
+</databaseChangeLog>

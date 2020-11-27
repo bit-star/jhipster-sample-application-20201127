@@ -1,0 +1,112 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fmp-widget-info-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.home.createOrEditLabel">Create or edit a Fmp Widget Info</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.portalId" for="field_portalId">Portal Id</label>
+                    <input type="text" class="form-control" name="portalId" id="field_portalId"
+                           formControlName="portalId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.catId" for="field_catId">Cat Id</label>
+                    <input type="text" class="form-control" name="catId" id="field_catId"
+                           formControlName="catId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrl" for="field_dataUrl">Data Url</label>
+                    <input type="text" class="form-control" name="dataUrl" id="field_dataUrl"
+                           formControlName="dataUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.sort" for="field_sort">Sort</label>
+                    <input type="text" class="form-control" name="sort" id="field_sort"
+                           formControlName="sort"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrlParam" for="field_dataUrlParam">Data Url Param</label>
+                    <select class="form-control" name="dataUrlParam" formControlName="dataUrlParam" id="field_dataUrlParam">
+                        <option value="JobCode">{{ 'jhipsterSampleApplication20201127App.PassingForm.JobCode' | translate }}</option>
+                        <option value="Email">{{ 'jhipsterSampleApplication20201127App.PassingForm.Email' | translate }}</option>
+                        <option value="Mobile">{{ 'jhipsterSampleApplication20201127App.PassingForm.Mobile' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isTop" for="field_isTop">Is Top</label>
+                    <select class="form-control" name="isTop" formControlName="isTop" id="field_isTop">
+                        <option value="Top">{{ 'jhipsterSampleApplication20201127App.TopOption.Top' | translate }}</option>
+                        <option value="NotTop">{{ 'jhipsterSampleApplication20201127App.TopOption.NotTop' | translate }}</option>
+                        <option value="EnTop">{{ 'jhipsterSampleApplication20201127App.TopOption.EnTop' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.contentType" for="field_contentType">Content Type</label>
+                    <select class="form-control" name="contentType" formControlName="contentType" id="field_contentType">
+                        <option value="List">{{ 'jhipsterSampleApplication20201127App.WidgetContentType.List' | translate }}</option>
+                        <option value="Image">{{ 'jhipsterSampleApplication20201127App.WidgetContentType.Image' | translate }}</option>
+                        <option value="Html">{{ 'jhipsterSampleApplication20201127App.WidgetContentType.Html' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="OA">{{ 'jhipsterSampleApplication20201127App.WidgeType.OA' | translate }}</option>
+                        <option value="Personal">{{ 'jhipsterSampleApplication20201127App.WidgeType.Personal' | translate }}</option>
+                        <option value="General">{{ 'jhipsterSampleApplication20201127App.WidgeType.General' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isDeleted" for="field_isDeleted">Is Deleted</label>
+                    <input type="checkbox" class="form-control" name="isDeleted" id="field_isDeleted"
+                           formControlName="isDeleted"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.fmpMicroApp" for="field_fmpMicroApp">Fmp Micro App</label>
+                    <select class="form-control" id="field_fmpMicroApp" name="fmpMicroApp" formControlName="fmpMicroApp">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fmpMicroAppOption.id === editForm.get('fmpMicroApp')!.value?.id ? editForm.get('fmpMicroApp')!.value : fmpMicroAppOption" *ngFor="let fmpMicroAppOption of fmpmicroapps; trackBy: trackById">{{ fmpMicroAppOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

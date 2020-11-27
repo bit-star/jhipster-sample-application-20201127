@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-portal-routing-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.home.createOrEditLabel">Create or edit a Portal Routing</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.mucAppOwner" for="field_mucAppOwner">Muc App Owner</label>
+                    <input type="text" class="form-control" name="mucAppOwner" id="field_mucAppOwner"
+                           formControlName="mucAppOwner"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.mucAppId" for="field_mucAppId">Muc App Id</label>
+                    <input type="text" class="form-control" name="mucAppId" id="field_mucAppId"
+                           formControlName="mucAppId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.mucAppUrl" for="field_mucAppUrl">Muc App Url</label>
+                    <input type="text" class="form-control" name="mucAppUrl" id="field_mucAppUrl"
+                           formControlName="mucAppUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.mucAppName" for="field_mucAppName">Muc App Name</label>
+                    <input type="text" class="form-control" name="mucAppName" id="field_mucAppName"
+                           formControlName="mucAppName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.portalRouting.mucAppNameEn" for="field_mucAppNameEn">Muc App Name En</label>
+                    <input type="text" class="form-control" name="mucAppNameEn" id="field_mucAppNameEn"
+                           formControlName="mucAppNameEn"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

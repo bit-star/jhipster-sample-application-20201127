@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity ManagerUser.
+    -->
+    <changeSet id="20201127025900-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="manager_user_id"
+                                 baseTableName="manager_user_uuc_department_trees"
+                                 constraintName="fk_manager_user_uuc_department_trees_manager_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="manager_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_department_trees_id"
+                                 baseTableName="manager_user_uuc_department_trees"
+                                 constraintName="fk_manager_user_uuc_department_trees_uuc_department_trees_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_department_tree"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
+                                 baseTableName="manager_user"
+                                 constraintName="fk_manager_user_fmp_sub_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+    </changeSet>
+</databaseChangeLog>

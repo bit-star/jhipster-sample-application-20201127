@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "managerUser": {
+      "home": {
+        "title": "Manager Users",
+        "createLabel": "创建新 Manager User",
+        "createOrEditLabel": "创建或编辑 Manager User",
+        "notFound": "No Manager Users found"
+      },
+      "created": "Manager User {{ param }} 创建成功",
+      "updated": "Manager User {{ param }} 更新成功",
+      "deleted": "Manager User {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Manager User {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Manager User"
+      },
+      "parentId": "Parent Id",
+      "type": "Type",
+      "uucDepartmentTrees": "Uuc Department Trees",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

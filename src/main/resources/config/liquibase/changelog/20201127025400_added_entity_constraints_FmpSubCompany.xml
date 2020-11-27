@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity FmpSubCompany.
+    -->
+    <changeSet id="20201127025400-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
+                                 baseTableName="fmp_sub_company_fmp_micro_app"
+                                 constraintName="fk_fmp_sub_company_fmp_micro_app_fmp_sub_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+        <addForeignKeyConstraint baseColumnNames="fmp_micro_app_id"
+                                 baseTableName="fmp_sub_company_fmp_micro_app"
+                                 constraintName="fk_fmp_sub_company_fmp_micro_app_fmp_micro_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
+                                 baseTableName="fmp_sub_company_uuc_department_tree"
+                                 constraintName="fk_fmp_sub_company_uuc_department_tree_fmp_sub_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_department_tree_id"
+                                 baseTableName="fmp_sub_company_uuc_department_tree"
+                                 constraintName="fk_fmp_sub_company_uuc_department_tree_uuc_department_tree_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_department_tree"/>
+        
+    </changeSet>
+</databaseChangeLog>

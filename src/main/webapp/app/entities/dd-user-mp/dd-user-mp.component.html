@@ -1,0 +1,105 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.home.title">Dd Users</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dd-user-mp" [routerLink]="['/dd-user-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.ddUser.home.createLabel">
+            Create a new Dd User
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="ddUsers?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.home.notFound">No ddUsers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="ddUsers && ddUsers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.unionid">Unionid</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.remark">Remark</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.userid">Userid</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isLeaderInDepts">Is Leader In Depts</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isBoss">Is Boss</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.hiredDate">Hired Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isSenior">Is Senior</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.tel">Tel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.department">Department</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.workPlace">Work Place</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.orderInDepts">Order In Depts</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.mobile">Mobile</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.errmsg">Errmsg</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.active">Active</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.avatar">Avatar</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isAdmin">Is Admin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isHide">Is Hide</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.jobnumber">Jobnumber</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.extattr">Extattr</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.stateCode">State Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.position">Position</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUser.roles">Roles</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ddUser of ddUsers ;trackBy: trackId">
+                    <td><a [routerLink]="['/dd-user-mp', ddUser.id, 'view']">{{ ddUser.id }}</a></td>
+                    <td>{{ ddUser.unionid }}</td>
+                    <td>{{ ddUser.remark }}</td>
+                    <td>{{ ddUser.userid }}</td>
+                    <td>{{ ddUser.isLeaderInDepts }}</td>
+                    <td>{{ ddUser.isBoss }}</td>
+                    <td>{{ ddUser.hiredDate }}</td>
+                    <td>{{ ddUser.isSenior }}</td>
+                    <td>{{ ddUser.tel }}</td>
+                    <td>{{ ddUser.department }}</td>
+                    <td>{{ ddUser.workPlace }}</td>
+                    <td>{{ ddUser.orderInDepts }}</td>
+                    <td>{{ ddUser.mobile }}</td>
+                    <td>{{ ddUser.errmsg }}</td>
+                    <td>{{ ddUser.active }}</td>
+                    <td>{{ ddUser.avatar }}</td>
+                    <td>{{ ddUser.isAdmin }}</td>
+                    <td>{{ ddUser.isHide }}</td>
+                    <td>{{ ddUser.jobnumber }}</td>
+                    <td>{{ ddUser.name }}</td>
+                    <td>{{ ddUser.extattr }}</td>
+                    <td>{{ ddUser.stateCode }}</td>
+                    <td>{{ ddUser.position }}</td>
+                    <td>{{ ddUser.roles }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dd-user-mp', ddUser.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dd-user-mp', ddUser.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(ddUser)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

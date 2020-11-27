@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "portalRouting": {
+      "home": {
+        "title": "Portal Routings",
+        "createLabel": "Create a new Portal Routing",
+        "createOrEditLabel": "Create or edit a Portal Routing",
+        "notFound": "No Portal Routings found"
+      },
+      "created": "A new Portal Routing is created with identifier {{ param }}",
+      "updated": "A Portal Routing is updated with identifier {{ param }}",
+      "deleted": "A Portal Routing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Portal Routing {{ id }}?"
+      },
+      "detail": {
+        "title": "Portal Routing"
+      },
+      "mucAppOwner": "Muc App Owner",
+      "mucAppId": "Muc App Id",
+      "mucAppUrl": "Muc App Url",
+      "mucAppName": "Muc App Name",
+      "mucAppNameEn": "Muc App Name En"
+    }
+  }
+}

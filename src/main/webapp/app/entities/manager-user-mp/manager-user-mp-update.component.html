@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-manager-user-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.managerUser.home.createOrEditLabel">Create or edit a Manager User</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.managerUser.parentId" for="field_parentId">Parent Id</label>
+                    <input type="number" class="form-control" name="parentId" id="field_parentId"
+                           formControlName="parentId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.managerUser.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="SuperAdministrator">{{ 'jhipsterSampleApplication20201127App.ManagerUserType.SuperAdministrator' | translate }}</option>
+                        <option value="NormalAdministrator">{{ 'jhipsterSampleApplication20201127App.ManagerUserType.NormalAdministrator' | translate }}</option>
+                        <option value="SubAdministrator">{{ 'jhipsterSampleApplication20201127App.ManagerUserType.SubAdministrator' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhipsterSampleApplication20201127App.managerUser.uucDepartmentTrees" for="field_uucDepartmentTrees">Uuc Department Trees</label>
+                    <select class="form-control" id="field_uucDepartmentTrees" multiple name="uucDepartmentTrees" formControlName="uucDepartmentTrees">
+                        <option [ngValue]="getSelected(editForm.get('uucDepartmentTrees')!.value, uucDepartmentTreeOption)" *ngFor="let uucDepartmentTreeOption of uucdepartmenttrees; trackBy: trackById">{{ uucDepartmentTreeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.managerUser.fmpSubCompany" for="field_fmpSubCompany">Fmp Sub Company</label>
+                    <select class="form-control" id="field_fmpSubCompany" name="fmpSubCompany" formControlName="fmpSubCompany">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fmpSubCompanyOption.id === editForm.get('fmpSubCompany')!.value?.id ? editForm.get('fmpSubCompany')!.value : fmpSubCompanyOption" *ngFor="let fmpSubCompanyOption of fmpsubcompanies; trackBy: trackById">{{ fmpSubCompanyOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

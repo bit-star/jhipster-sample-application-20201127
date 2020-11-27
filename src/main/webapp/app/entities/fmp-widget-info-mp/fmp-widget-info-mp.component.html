@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.home.title">Fmp Widget Infos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fmp-widget-info-mp" [routerLink]="['/fmp-widget-info-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.home.createLabel">
+            Create a new Fmp Widget Info
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fmpWidgetInfos?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.home.notFound">No fmpWidgetInfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fmpWidgetInfos && fmpWidgetInfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.code">Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.portalId">Portal Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.title">Title</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.catId">Cat Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrl">Data Url</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.sort">Sort</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrlParam">Data Url Param</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isTop">Is Top</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.contentType">Content Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isDeleted">Is Deleted</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.fmpMicroApp">Fmp Micro App</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fmpWidgetInfo of fmpWidgetInfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/fmp-widget-info-mp', fmpWidgetInfo.id, 'view']">{{ fmpWidgetInfo.id }}</a></td>
+                    <td>{{ fmpWidgetInfo.code }}</td>
+                    <td>{{ fmpWidgetInfo.portalId }}</td>
+                    <td>{{ fmpWidgetInfo.title }}</td>
+                    <td>{{ fmpWidgetInfo.catId }}</td>
+                    <td>{{ fmpWidgetInfo.dataUrl }}</td>
+                    <td>{{ fmpWidgetInfo.sort }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplication20201127App.PassingForm.' + fmpWidgetInfo.dataUrlParam }}">{{ fmpWidgetInfo.dataUrlParam }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplication20201127App.TopOption.' + fmpWidgetInfo.isTop }}">{{ fmpWidgetInfo.isTop }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplication20201127App.WidgetContentType.' + fmpWidgetInfo.contentType }}">{{ fmpWidgetInfo.contentType }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplication20201127App.WidgeType.' + fmpWidgetInfo.type }}">{{ fmpWidgetInfo.type }}</td>
+                    <td>{{ fmpWidgetInfo.isDeleted }}</td>
+                    <td>
+                        <div *ngIf="fmpWidgetInfo.fmpMicroApp">
+                            <a [routerLink]="['/fmp-micro-app-mp', fmpWidgetInfo.fmpMicroApp?.id, 'view']" >{{ fmpWidgetInfo.fmpMicroApp?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fmp-widget-info-mp', fmpWidgetInfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fmp-widget-info-mp', fmpWidgetInfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fmpWidgetInfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

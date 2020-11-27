@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.home.title">Manager Users</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-manager-user-mp" [routerLink]="['/manager-user-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.managerUser.home.createLabel">
+            Create a new Manager User
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="managerUsers?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.home.notFound">No managerUsers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="managerUsers && managerUsers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.parentId">Parent Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.uucDepartmentTrees">Uuc Department Trees</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let managerUser of managerUsers ;trackBy: trackId">
+                    <td><a [routerLink]="['/manager-user-mp', managerUser.id, 'view']">{{ managerUser.id }}</a></td>
+                    <td>{{ managerUser.parentId }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplication20201127App.ManagerUserType.' + managerUser.type }}">{{ managerUser.type }}</td>
+                    <td>
+                        <span *ngFor="let uucDepartmentTrees of managerUser.uucDepartmentTrees; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-department-tree-mp', uucDepartmentTrees?.id, 'view']">{{ uucDepartmentTrees.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <div *ngIf="managerUser.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', managerUser.fmpSubCompany?.id, 'view']" >{{ managerUser.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/manager-user-mp', managerUser.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/manager-user-mp', managerUser.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(managerUser)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
