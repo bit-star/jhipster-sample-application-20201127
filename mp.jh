@@ -285,9 +285,7 @@ relationship OneToMany {
     FmpSubCompany to FmpMicroAppType,
     FmpMicroAppType to FmpMicroApp,
     FmpSubCompany{createdApp} to FmpMicroApp{creatorCompany},
-    FmpSubCompany to MicroAppGroup,
-    MicroAppGroup to UucDepartmentTree,
-    MicroAppGroup to UucUserBaseinfo
+    FmpSubCompany to MicroAppGroup
 }
 
 
@@ -298,7 +296,9 @@ relationship ManyToMany {
     UucUserBaseinfo{collectionFmpMicroApp} to FmpMicroApp{collectionUsers},
     ManagerUser {uucDepartmentTrees} to UucDepartmentTree{manager} ,
     MicroAppGroup to FmpMicroApp,
-    FmpSubCompany to UucDepartmentTree
+    FmpSubCompany to UucDepartmentTree,
+     MicroAppGroup to UucDepartmentTree,
+    MicroAppGroup to UucUserBaseinfo
 }
 
 
