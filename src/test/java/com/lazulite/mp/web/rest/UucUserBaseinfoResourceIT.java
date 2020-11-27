@@ -4097,26 +4097,6 @@ public class UucUserBaseinfoResourceIT {
 
     @Test
     @Transactional
-    public void getAllUucUserBaseinfosByMicroAppGroupIsEqualToSomething() throws Exception {
-        // Initialize the database
-        uucUserBaseinfoRepository.saveAndFlush(uucUserBaseinfo);
-        MicroAppGroup microAppGroup = MicroAppGroupResourceIT.createEntity(em);
-        em.persist(microAppGroup);
-        em.flush();
-        uucUserBaseinfo.setMicroAppGroup(microAppGroup);
-        uucUserBaseinfoRepository.saveAndFlush(uucUserBaseinfo);
-        Long microAppGroupId = microAppGroup.getId();
-
-        // Get all the uucUserBaseinfoList where microAppGroup equals to microAppGroupId
-        defaultUucUserBaseinfoShouldBeFound("microAppGroupId.equals=" + microAppGroupId);
-
-        // Get all the uucUserBaseinfoList where microAppGroup equals to microAppGroupId + 1
-        defaultUucUserBaseinfoShouldNotBeFound("microAppGroupId.equals=" + (microAppGroupId + 1));
-    }
-
-
-    @Test
-    @Transactional
     public void getAllUucUserBaseinfosByUsableFmpMicroAppIsEqualToSomething() throws Exception {
         // Initialize the database
         uucUserBaseinfoRepository.saveAndFlush(uucUserBaseinfo);
@@ -4132,6 +4112,26 @@ public class UucUserBaseinfoResourceIT {
 
         // Get all the uucUserBaseinfoList where usableFmpMicroApp equals to usableFmpMicroAppId + 1
         defaultUucUserBaseinfoShouldNotBeFound("usableFmpMicroAppId.equals=" + (usableFmpMicroAppId + 1));
+    }
+
+
+    @Test
+    @Transactional
+    public void getAllUucUserBaseinfosByMicroAppGroupIsEqualToSomething() throws Exception {
+        // Initialize the database
+        uucUserBaseinfoRepository.saveAndFlush(uucUserBaseinfo);
+        MicroAppGroup microAppGroup = MicroAppGroupResourceIT.createEntity(em);
+        em.persist(microAppGroup);
+        em.flush();
+        uucUserBaseinfo.addMicroAppGroup(microAppGroup);
+        uucUserBaseinfoRepository.saveAndFlush(uucUserBaseinfo);
+        Long microAppGroupId = microAppGroup.getId();
+
+        // Get all the uucUserBaseinfoList where microAppGroup equals to microAppGroupId
+        defaultUucUserBaseinfoShouldBeFound("microAppGroupId.equals=" + microAppGroupId);
+
+        // Get all the uucUserBaseinfoList where microAppGroup equals to microAppGroupId + 1
+        defaultUucUserBaseinfoShouldNotBeFound("microAppGroupId.equals=" + (microAppGroupId + 1));
     }
 
     /**

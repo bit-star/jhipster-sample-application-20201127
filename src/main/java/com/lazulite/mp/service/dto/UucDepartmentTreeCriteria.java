@@ -75,13 +75,13 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
 
     private StringFilter srcDeptUcode;
 
-    private LongFilter microAppGroupId;
-
     private LongFilter usableId;
 
     private LongFilter managerId;
 
     private LongFilter fmpSubCompanyId;
+
+    private LongFilter microAppGroupId;
 
     public UucDepartmentTreeCriteria() {
     }
@@ -112,10 +112,10 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
         this.srcDeptType = other.srcDeptType == null ? null : other.srcDeptType.copy();
         this.srcType = other.srcType == null ? null : other.srcType.copy();
         this.srcDeptUcode = other.srcDeptUcode == null ? null : other.srcDeptUcode.copy();
-        this.microAppGroupId = other.microAppGroupId == null ? null : other.microAppGroupId.copy();
         this.usableId = other.usableId == null ? null : other.usableId.copy();
         this.managerId = other.managerId == null ? null : other.managerId.copy();
         this.fmpSubCompanyId = other.fmpSubCompanyId == null ? null : other.fmpSubCompanyId.copy();
+        this.microAppGroupId = other.microAppGroupId == null ? null : other.microAppGroupId.copy();
     }
 
     @Override
@@ -323,14 +323,6 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
         this.srcDeptUcode = srcDeptUcode;
     }
 
-    public LongFilter getMicroAppGroupId() {
-        return microAppGroupId;
-    }
-
-    public void setMicroAppGroupId(LongFilter microAppGroupId) {
-        this.microAppGroupId = microAppGroupId;
-    }
-
     public LongFilter getUsableId() {
         return usableId;
     }
@@ -353,6 +345,14 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
 
     public void setFmpSubCompanyId(LongFilter fmpSubCompanyId) {
         this.fmpSubCompanyId = fmpSubCompanyId;
+    }
+
+    public LongFilter getMicroAppGroupId() {
+        return microAppGroupId;
+    }
+
+    public void setMicroAppGroupId(LongFilter microAppGroupId) {
+        this.microAppGroupId = microAppGroupId;
     }
 
 
@@ -391,10 +391,10 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
             Objects.equals(srcDeptType, that.srcDeptType) &&
             Objects.equals(srcType, that.srcType) &&
             Objects.equals(srcDeptUcode, that.srcDeptUcode) &&
-            Objects.equals(microAppGroupId, that.microAppGroupId) &&
             Objects.equals(usableId, that.usableId) &&
             Objects.equals(managerId, that.managerId) &&
-            Objects.equals(fmpSubCompanyId, that.fmpSubCompanyId);
+            Objects.equals(fmpSubCompanyId, that.fmpSubCompanyId) &&
+            Objects.equals(microAppGroupId, that.microAppGroupId);
     }
 
     @Override
@@ -425,10 +425,10 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
         srcDeptType,
         srcType,
         srcDeptUcode,
-        microAppGroupId,
         usableId,
         managerId,
-        fmpSubCompanyId
+        fmpSubCompanyId,
+        microAppGroupId
         );
     }
 
@@ -461,10 +461,10 @@ public class UucDepartmentTreeCriteria implements Serializable, Criteria {
                 (srcDeptType != null ? "srcDeptType=" + srcDeptType + ", " : "") +
                 (srcType != null ? "srcType=" + srcType + ", " : "") +
                 (srcDeptUcode != null ? "srcDeptUcode=" + srcDeptUcode + ", " : "") +
-                (microAppGroupId != null ? "microAppGroupId=" + microAppGroupId + ", " : "") +
                 (usableId != null ? "usableId=" + usableId + ", " : "") +
                 (managerId != null ? "managerId=" + managerId + ", " : "") +
                 (fmpSubCompanyId != null ? "fmpSubCompanyId=" + fmpSubCompanyId + ", " : "") +
+                (microAppGroupId != null ? "microAppGroupId=" + microAppGroupId + ", " : "") +
             "}";
     }
 

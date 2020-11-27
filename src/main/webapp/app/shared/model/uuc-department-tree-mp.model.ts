@@ -1,8 +1,8 @@
 import { Moment } from 'moment';
-import { IMicroAppGroupMp } from 'app/shared/model/micro-app-group-mp.model';
 import { IFmpMicroAppMp } from 'app/shared/model/fmp-micro-app-mp.model';
 import { IManagerUserMp } from 'app/shared/model/manager-user-mp.model';
 import { IFmpSubCompanyMp } from 'app/shared/model/fmp-sub-company-mp.model';
+import { IMicroAppGroupMp } from 'app/shared/model/micro-app-group-mp.model';
 
 export interface IUucDepartmentTreeMp {
   id?: number;
@@ -30,10 +30,10 @@ export interface IUucDepartmentTreeMp {
   srcDeptType?: string;
   srcType?: string;
   srcDeptUcode?: string;
-  microAppGroup?: IMicroAppGroupMp;
   usables?: IFmpMicroAppMp[];
   managers?: IManagerUserMp[];
   fmpSubCompanies?: IFmpSubCompanyMp[];
+  microAppGroups?: IMicroAppGroupMp[];
 }
 
 export class UucDepartmentTreeMp implements IUucDepartmentTreeMp {
@@ -63,9 +63,9 @@ export class UucDepartmentTreeMp implements IUucDepartmentTreeMp {
     public srcDeptType?: string,
     public srcType?: string,
     public srcDeptUcode?: string,
-    public microAppGroup?: IMicroAppGroupMp,
     public usables?: IFmpMicroAppMp[],
     public managers?: IManagerUserMp[],
-    public fmpSubCompanies?: IFmpSubCompanyMp[]
+    public fmpSubCompanies?: IFmpSubCompanyMp[],
+    public microAppGroups?: IMicroAppGroupMp[]
   ) {}
 }

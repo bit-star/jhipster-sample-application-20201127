@@ -88,9 +88,6 @@
             <column name="src_dept_ucode" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="micro_app_group_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="uuc_department_tree" columnName="rec_create_time" columnDataType="datetime"/>

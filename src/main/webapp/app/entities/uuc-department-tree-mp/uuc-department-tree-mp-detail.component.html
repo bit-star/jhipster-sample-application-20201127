@@ -104,12 +104,6 @@
                 <dd>
                     <span>{{ uucDepartmentTree.srcDeptUcode }}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microAppGroup">Micro App Group</span></dt>
-                <dd>
-                    <div *ngIf="uucDepartmentTree.microAppGroup">
-                        <a [routerLink]="['/micro-app-group-mp', uucDepartmentTree.microAppGroup?.id, 'view']">{{ uucDepartmentTree.microAppGroup?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

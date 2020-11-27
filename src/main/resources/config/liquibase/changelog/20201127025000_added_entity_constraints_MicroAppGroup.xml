@@ -20,6 +20,30 @@
                                  referencedColumnNames="id"
                                  referencedTableName="fmp_micro_app"/>
         
+        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
+                                 baseTableName="micro_app_group_uuc_department_tree"
+                                 constraintName="fk_micro_app_group_uuc_department_tree_micro_app_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="micro_app_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_department_tree_id"
+                                 baseTableName="micro_app_group_uuc_department_tree"
+                                 constraintName="fk_micro_app_group_uuc_department_tree_uuc_department_tree_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_department_tree"/>
+        
+        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
+                                 baseTableName="micro_app_group_uuc_user_baseinfo"
+                                 constraintName="fk_micro_app_group_uuc_user_baseinfo_micro_app_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="micro_app_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_user_baseinfo_id"
+                                 baseTableName="micro_app_group_uuc_user_baseinfo"
+                                 constraintName="fk_micro_app_group_uuc_user_baseinfo_uuc_user_baseinfo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_user_baseinfo"/>
+        
         <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
                                  baseTableName="micro_app_group"
                                  constraintName="fk_micro_app_group_fmp_sub_company_id"

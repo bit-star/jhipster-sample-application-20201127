@@ -157,10 +157,6 @@ public class UucDepartmentTreeQueryService extends QueryService<UucDepartmentTre
             if (criteria.getSrcDeptUcode() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getSrcDeptUcode(), UucDepartmentTree_.srcDeptUcode));
             }
-            if (criteria.getMicroAppGroupId() != null) {
-                specification = specification.and(buildSpecification(criteria.getMicroAppGroupId(),
-                    root -> root.join(UucDepartmentTree_.microAppGroup, JoinType.LEFT).get(MicroAppGroup_.id)));
-            }
             if (criteria.getUsableId() != null) {
                 specification = specification.and(buildSpecification(criteria.getUsableId(),
                     root -> root.join(UucDepartmentTree_.usables, JoinType.LEFT).get(FmpMicroApp_.id)));
@@ -172,6 +168,10 @@ public class UucDepartmentTreeQueryService extends QueryService<UucDepartmentTre
             if (criteria.getFmpSubCompanyId() != null) {
                 specification = specification.and(buildSpecification(criteria.getFmpSubCompanyId(),
                     root -> root.join(UucDepartmentTree_.fmpSubCompanies, JoinType.LEFT).get(FmpSubCompany_.id)));
+            }
+            if (criteria.getMicroAppGroupId() != null) {
+                specification = specification.and(buildSpecification(criteria.getMicroAppGroupId(),
+                    root -> root.join(UucDepartmentTree_.microAppGroups, JoinType.LEFT).get(MicroAppGroup_.id)));
             }
         }
         return specification;

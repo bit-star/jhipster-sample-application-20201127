@@ -51,8 +51,8 @@ export interface IUucUserBaseinfoMp {
   hrCardId?: string;
   employeeType?: string;
   collectionFmpMicroApps?: IFmpMicroAppMp[];
-  microAppGroup?: IMicroAppGroupMp;
   usableFmpMicroApps?: IFmpMicroAppMp[];
+  microAppGroups?: IMicroAppGroupMp[];
 }
 
 export class UucUserBaseinfoMp implements IUucUserBaseinfoMp {
@@ -105,7 +105,7 @@ export class UucUserBaseinfoMp implements IUucUserBaseinfoMp {
     public hrCardId?: string,
     public employeeType?: string,
     public collectionFmpMicroApps?: IFmpMicroAppMp[],
-    public microAppGroup?: IMicroAppGroupMp,
-    public usableFmpMicroApps?: IFmpMicroAppMp[]
+    public usableFmpMicroApps?: IFmpMicroAppMp[],
+    public microAppGroups?: IMicroAppGroupMp[]
   ) {}
 }

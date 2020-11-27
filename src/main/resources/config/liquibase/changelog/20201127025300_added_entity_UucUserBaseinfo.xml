@@ -154,9 +154,6 @@
             <column name="employee_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="micro_app_group_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="uuc_user_baseinfo" columnName="hiredate" columnDataType="datetime"/>

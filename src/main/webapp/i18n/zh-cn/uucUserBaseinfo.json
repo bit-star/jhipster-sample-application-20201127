@@ -63,8 +63,8 @@
       "hrCardId": "Hr Card Id",
       "employeeType": "Employee Type",
       "collectionFmpMicroApp": "Collection Fmp Micro App",
-      "microAppGroup": "Micro App Group",
-      "usableFmpMicroApp": "Usable Fmp Micro App"
+      "usableFmpMicroApp": "Usable Fmp Micro App",
+      "microAppGroup": "Micro App Group"
     }
   }
 }

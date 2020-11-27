@@ -17,9 +17,9 @@
         "title": "Micro App Group"
       },
       "name": "Name",
+      "fmpMicroApp": "Fmp Micro App",
       "uucDepartmentTree": "Uuc Department Tree",
       "uucUserBaseinfo": "Uuc User Baseinfo",
-      "fmpMicroApp": "Fmp Micro App",
       "fmpSubCompany": "Fmp Sub Company"
     }
   }

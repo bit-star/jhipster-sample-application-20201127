@@ -17,13 +17,13 @@ import java.util.Optional;
 @Repository
 public interface MicroAppGroupRepository extends JpaRepository<MicroAppGroup, Long> {
 
-    @Query(value = "select distinct microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps",
+    @Query(value = "select distinct microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps left join fetch microAppGroup.uucDepartmentTrees left join fetch microAppGroup.uucUserBaseinfos",
         countQuery = "select count(distinct microAppGroup) from MicroAppGroup microAppGroup")
     Page<MicroAppGroup> findAllWithEagerRelationships(Pageable pageable);
 
-    @Query("select distinct microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps")
+    @Query("select distinct microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps left join fetch microAppGroup.uucDepartmentTrees left join fetch microAppGroup.uucUserBaseinfos")
     List<MicroAppGroup> findAllWithEagerRelationships();
 
-    @Query("select microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps where microAppGroup.id =:id")
+    @Query("select microAppGroup from MicroAppGroup microAppGroup left join fetch microAppGroup.fmpMicroApps left join fetch microAppGroup.uucDepartmentTrees left join fetch microAppGroup.uucUserBaseinfos where microAppGroup.id =:id")
     Optional<MicroAppGroup> findOneWithEagerRelationships(@Param("id") Long id);
 }

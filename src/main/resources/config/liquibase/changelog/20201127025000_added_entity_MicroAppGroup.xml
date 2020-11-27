@@ -39,6 +39,28 @@
 
         <addPrimaryKey columnNames="micro_app_group_id, fmp_micro_app_id" tableName="micro_app_group_fmp_micro_app"/>
         
+        <createTable tableName="micro_app_group_uuc_department_tree">
+            <column name="uuc_department_tree_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="micro_app_group_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="micro_app_group_id, uuc_department_tree_id" tableName="micro_app_group_uuc_department_tree"/>
+        
+        <createTable tableName="micro_app_group_uuc_user_baseinfo">
+            <column name="uuc_user_baseinfo_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="micro_app_group_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="micro_app_group_id, uuc_user_baseinfo_id" tableName="micro_app_group_uuc_user_baseinfo"/>
+        
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
 

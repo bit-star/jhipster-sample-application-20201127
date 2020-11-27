@@ -227,13 +227,13 @@ public class UucUserBaseinfoQueryService extends QueryService<UucUserBaseinfo> {
                 specification = specification.and(buildSpecification(criteria.getCollectionFmpMicroAppId(),
                     root -> root.join(UucUserBaseinfo_.collectionFmpMicroApps, JoinType.LEFT).get(FmpMicroApp_.id)));
             }
-            if (criteria.getMicroAppGroupId() != null) {
-                specification = specification.and(buildSpecification(criteria.getMicroAppGroupId(),
-                    root -> root.join(UucUserBaseinfo_.microAppGroup, JoinType.LEFT).get(MicroAppGroup_.id)));
-            }
             if (criteria.getUsableFmpMicroAppId() != null) {
                 specification = specification.and(buildSpecification(criteria.getUsableFmpMicroAppId(),
                     root -> root.join(UucUserBaseinfo_.usableFmpMicroApps, JoinType.LEFT).get(FmpMicroApp_.id)));
+            }
+            if (criteria.getMicroAppGroupId() != null) {
+                specification = specification.and(buildSpecification(criteria.getMicroAppGroupId(),
+                    root -> root.join(UucUserBaseinfo_.microAppGroups, JoinType.LEFT).get(MicroAppGroup_.id)));
             }
         }
         return specification;

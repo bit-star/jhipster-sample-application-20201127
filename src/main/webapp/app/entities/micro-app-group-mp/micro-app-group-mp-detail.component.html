@@ -18,6 +18,18 @@
                         <a [routerLink]="['/fmp-micro-app-mp', fmpMicroApp?.id, 'view']">{{ fmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
                     </span>
                 </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.uucDepartmentTree">Uuc Department Tree</span></dt>
+                <dd>
+                    <span *ngFor="let uucDepartmentTree of microAppGroup.uucDepartmentTrees; let last = last">
+                        <a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree?.id, 'view']">{{ uucDepartmentTree.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.uucUserBaseinfo">Uuc User Baseinfo</span></dt>
+                <dd>
+                    <span *ngFor="let uucUserBaseinfo of microAppGroup.uucUserBaseinfos; let last = last">
+                        <a [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo?.id, 'view']">{{ uucUserBaseinfo.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
                 <dt><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.fmpSubCompany">Fmp Sub Company</span></dt>
                 <dd>
                     <div *ngIf="microAppGroup.fmpSubCompany">
