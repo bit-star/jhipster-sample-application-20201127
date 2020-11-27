@@ -47,7 +47,6 @@
                     <th scope="col"  jhiSortBy="srcDeptType"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptType">Src Dept Type</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="srcType"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcType">Src Type</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="srcDeptUcode"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptUcode">Src Dept Ucode</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="microAppGroup.id"><span jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microAppGroup">Micro App Group</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -78,11 +77,6 @@
                     <td>{{ uucDepartmentTree.srcDeptType }}</td>
                     <td>{{ uucDepartmentTree.srcType }}</td>
                     <td>{{ uucDepartmentTree.srcDeptUcode }}</td>
-                    <td>
-                        <div *ngIf="uucDepartmentTree.microAppGroup">
-                            <a [routerLink]="['/micro-app-group-mp', uucDepartmentTree.microAppGroup?.id, 'view']" >{{ uucDepartmentTree.microAppGroup?.id }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

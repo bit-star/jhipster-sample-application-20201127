@@ -198,12 +198,6 @@
                         <a [routerLink]="['/fmp-micro-app-mp', collectionFmpMicroApp?.id, 'view']">{{ collectionFmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
                     </span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.microAppGroup">Micro App Group</span></dt>
-                <dd>
-                    <div *ngIf="uucUserBaseinfo.microAppGroup">
-                        <a [routerLink]="['/micro-app-group-mp', uucUserBaseinfo.microAppGroup?.id, 'view']">{{ uucUserBaseinfo.microAppGroup?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

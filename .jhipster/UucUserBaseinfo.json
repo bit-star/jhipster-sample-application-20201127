@@ -196,17 +196,18 @@
       "ownerSide": true
     },
     {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "microAppGroup",
-      "otherEntityRelationshipName": "uucUserBaseinfo",
-      "relationshipName": "microAppGroup",
-      "otherEntityField": "id"
-    },
-    {
       "relationshipType": "many-to-many",
       "otherEntityName": "fmpMicroApp",
       "otherEntityRelationshipName": "usableUser",
       "relationshipName": "usableFmpMicroApp",
+      "otherEntityField": "id",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "microAppGroup",
+      "otherEntityRelationshipName": "uucUserBaseinfo",
+      "relationshipName": "microAppGroup",
       "otherEntityField": "id",
       "ownerSide": false
     }

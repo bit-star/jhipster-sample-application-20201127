@@ -27,20 +27,26 @@ public class MicroAppGroup implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "microAppGroup")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    private Set<UucDepartmentTree> uucDepartmentTrees = new HashSet<>();
-
-    @OneToMany(mappedBy = "microAppGroup")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    private Set<UucUserBaseinfo> uucUserBaseinfos = new HashSet<>();
-
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JoinTable(name = "micro_app_group_fmp_micro_app",
                joinColumns = @JoinColumn(name = "micro_app_group_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "fmp_micro_app_id", referencedColumnName = "id"))
     private Set<FmpMicroApp> fmpMicroApps = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JoinTable(name = "micro_app_group_uuc_department_tree",
+               joinColumns = @JoinColumn(name = "micro_app_group_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "uuc_department_tree_id", referencedColumnName = "id"))
+    private Set<UucDepartmentTree> uucDepartmentTrees = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JoinTable(name = "micro_app_group_uuc_user_baseinfo",
+               joinColumns = @JoinColumn(name = "micro_app_group_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "uuc_user_baseinfo_id", referencedColumnName = "id"))
+    private Set<UucUserBaseinfo> uucUserBaseinfos = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = "microAppGroups", allowSetters = true)
@@ -68,56 +74,6 @@ public class MicroAppGroup implements Serializable {
         this.name = name;
     }
 
-    public Set<UucDepartmentTree> getUucDepartmentTrees() {
-        return uucDepartmentTrees;
-    }
-
-    public MicroAppGroup uucDepartmentTrees(Set<UucDepartmentTree> uucDepartmentTrees) {
-        this.uucDepartmentTrees = uucDepartmentTrees;
-        return this;
-    }
-
-    public MicroAppGroup addUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
-        this.uucDepartmentTrees.add(uucDepartmentTree);
-        uucDepartmentTree.setMicroAppGroup(this);
-        return this;
-    }
-
-    public MicroAppGroup removeUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
-        this.uucDepartmentTrees.remove(uucDepartmentTree);
-        uucDepartmentTree.setMicroAppGroup(null);
-        return this;
-    }
-
-    public void setUucDepartmentTrees(Set<UucDepartmentTree> uucDepartmentTrees) {
-        this.uucDepartmentTrees = uucDepartmentTrees;
-    }
-
-    public Set<UucUserBaseinfo> getUucUserBaseinfos() {
-        return uucUserBaseinfos;
-    }
-
-    public MicroAppGroup uucUserBaseinfos(Set<UucUserBaseinfo> uucUserBaseinfos) {
-        this.uucUserBaseinfos = uucUserBaseinfos;
-        return this;
-    }
-
-    public MicroAppGroup addUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
-        this.uucUserBaseinfos.add(uucUserBaseinfo);
-        uucUserBaseinfo.setMicroAppGroup(this);
-        return this;
-    }
-
-    public MicroAppGroup removeUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
-        this.uucUserBaseinfos.remove(uucUserBaseinfo);
-        uucUserBaseinfo.setMicroAppGroup(null);
-        return this;
-    }
-
-    public void setUucUserBaseinfos(Set<UucUserBaseinfo> uucUserBaseinfos) {
-        this.uucUserBaseinfos = uucUserBaseinfos;
-    }
-
     public Set<FmpMicroApp> getFmpMicroApps() {
         return fmpMicroApps;
     }
@@ -141,6 +97,56 @@ public class MicroAppGroup implements Serializable {
 
     public void setFmpMicroApps(Set<FmpMicroApp> fmpMicroApps) {
         this.fmpMicroApps = fmpMicroApps;
+    }
+
+    public Set<UucDepartmentTree> getUucDepartmentTrees() {
+        return uucDepartmentTrees;
+    }
+
+    public MicroAppGroup uucDepartmentTrees(Set<UucDepartmentTree> uucDepartmentTrees) {
+        this.uucDepartmentTrees = uucDepartmentTrees;
+        return this;
+    }
+
+    public MicroAppGroup addUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
+        this.uucDepartmentTrees.add(uucDepartmentTree);
+        uucDepartmentTree.getMicroAppGroups().add(this);
+        return this;
+    }
+
+    public MicroAppGroup removeUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
+        this.uucDepartmentTrees.remove(uucDepartmentTree);
+        uucDepartmentTree.getMicroAppGroups().remove(this);
+        return this;
+    }
+
+    public void setUucDepartmentTrees(Set<UucDepartmentTree> uucDepartmentTrees) {
+        this.uucDepartmentTrees = uucDepartmentTrees;
+    }
+
+    public Set<UucUserBaseinfo> getUucUserBaseinfos() {
+        return uucUserBaseinfos;
+    }
+
+    public MicroAppGroup uucUserBaseinfos(Set<UucUserBaseinfo> uucUserBaseinfos) {
+        this.uucUserBaseinfos = uucUserBaseinfos;
+        return this;
+    }
+
+    public MicroAppGroup addUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
+        this.uucUserBaseinfos.add(uucUserBaseinfo);
+        uucUserBaseinfo.getMicroAppGroups().add(this);
+        return this;
+    }
+
+    public MicroAppGroup removeUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
+        this.uucUserBaseinfos.remove(uucUserBaseinfo);
+        uucUserBaseinfo.getMicroAppGroups().remove(this);
+        return this;
+    }
+
+    public void setUucUserBaseinfos(Set<UucUserBaseinfo> uucUserBaseinfos) {
+        this.uucUserBaseinfos = uucUserBaseinfos;
     }
 
     public FmpSubCompany getFmpSubCompany() {

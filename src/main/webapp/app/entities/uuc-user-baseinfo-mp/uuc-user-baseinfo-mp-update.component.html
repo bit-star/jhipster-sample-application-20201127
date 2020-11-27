@@ -297,14 +297,6 @@
                         <option [ngValue]="getSelected(editForm.get('collectionFmpMicroApps')!.value, fmpMicroAppOption)" *ngFor="let fmpMicroAppOption of fmpmicroapps; trackBy: trackById">{{ fmpMicroAppOption.id }}</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.microAppGroup" for="field_microAppGroup">Micro App Group</label>
-                    <select class="form-control" id="field_microAppGroup" name="microAppGroup" formControlName="microAppGroup">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="microAppGroupOption.id === editForm.get('microAppGroup')!.value?.id ? editForm.get('microAppGroup')!.value : microAppGroupOption" *ngFor="let microAppGroupOption of microappgroups; trackBy: trackById">{{ microAppGroupOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

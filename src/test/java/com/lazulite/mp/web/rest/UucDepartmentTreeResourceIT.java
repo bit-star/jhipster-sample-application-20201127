@@ -2,10 +2,10 @@ package com.lazulite.mp.web.rest;
 
 import com.lazulite.mp.JhipsterSampleApplication20201127App;
 import com.lazulite.mp.domain.UucDepartmentTree;
-import com.lazulite.mp.domain.MicroAppGroup;
 import com.lazulite.mp.domain.FmpMicroApp;
 import com.lazulite.mp.domain.ManagerUser;
 import com.lazulite.mp.domain.FmpSubCompany;
+import com.lazulite.mp.domain.MicroAppGroup;
 import com.lazulite.mp.repository.UucDepartmentTreeRepository;
 import com.lazulite.mp.service.UucDepartmentTreeService;
 import com.lazulite.mp.service.dto.UucDepartmentTreeCriteria;
@@ -2177,26 +2177,6 @@ public class UucDepartmentTreeResourceIT {
 
     @Test
     @Transactional
-    public void getAllUucDepartmentTreesByMicroAppGroupIsEqualToSomething() throws Exception {
-        // Initialize the database
-        uucDepartmentTreeRepository.saveAndFlush(uucDepartmentTree);
-        MicroAppGroup microAppGroup = MicroAppGroupResourceIT.createEntity(em);
-        em.persist(microAppGroup);
-        em.flush();
-        uucDepartmentTree.setMicroAppGroup(microAppGroup);
-        uucDepartmentTreeRepository.saveAndFlush(uucDepartmentTree);
-        Long microAppGroupId = microAppGroup.getId();
-
-        // Get all the uucDepartmentTreeList where microAppGroup equals to microAppGroupId
-        defaultUucDepartmentTreeShouldBeFound("microAppGroupId.equals=" + microAppGroupId);
-
-        // Get all the uucDepartmentTreeList where microAppGroup equals to microAppGroupId + 1
-        defaultUucDepartmentTreeShouldNotBeFound("microAppGroupId.equals=" + (microAppGroupId + 1));
-    }
-
-
-    @Test
-    @Transactional
     public void getAllUucDepartmentTreesByUsableIsEqualToSomething() throws Exception {
         // Initialize the database
         uucDepartmentTreeRepository.saveAndFlush(uucDepartmentTree);
@@ -2252,6 +2232,26 @@ public class UucDepartmentTreeResourceIT {
 
         // Get all the uucDepartmentTreeList where fmpSubCompany equals to fmpSubCompanyId + 1
         defaultUucDepartmentTreeShouldNotBeFound("fmpSubCompanyId.equals=" + (fmpSubCompanyId + 1));
+    }
+
+
+    @Test
+    @Transactional
+    public void getAllUucDepartmentTreesByMicroAppGroupIsEqualToSomething() throws Exception {
+        // Initialize the database
+        uucDepartmentTreeRepository.saveAndFlush(uucDepartmentTree);
+        MicroAppGroup microAppGroup = MicroAppGroupResourceIT.createEntity(em);
+        em.persist(microAppGroup);
+        em.flush();
+        uucDepartmentTree.addMicroAppGroup(microAppGroup);
+        uucDepartmentTreeRepository.saveAndFlush(uucDepartmentTree);
+        Long microAppGroupId = microAppGroup.getId();
+
+        // Get all the uucDepartmentTreeList where microAppGroup equals to microAppGroupId
+        defaultUucDepartmentTreeShouldBeFound("microAppGroupId.equals=" + microAppGroupId);
+
+        // Get all the uucDepartmentTreeList where microAppGroup equals to microAppGroupId + 1
+        defaultUucDepartmentTreeShouldNotBeFound("microAppGroupId.equals=" + (microAppGroupId + 1));
     }
 
     /**

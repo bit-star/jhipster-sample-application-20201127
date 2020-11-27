@@ -25,6 +25,8 @@
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.name">Name</span></th>
                     <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.fmpMicroApp">Fmp Micro App</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.uucDepartmentTree">Uuc Department Tree</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.uucUserBaseinfo">Uuc User Baseinfo</span></th>
                     <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.microAppGroup.fmpSubCompany">Fmp Sub Company</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -36,6 +38,16 @@
                     <td>
                         <span *ngFor="let fmpMicroApp of microAppGroup.fmpMicroApps; let last = last">
                             <a class="form-control-static" [routerLink]="['/fmp-micro-app-mp', fmpMicroApp?.id, 'view']">{{ fmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let uucDepartmentTree of microAppGroup.uucDepartmentTrees; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree?.id, 'view']">{{ uucDepartmentTree.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let uucUserBaseinfo of microAppGroup.uucUserBaseinfos; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo?.id, 'view']">{{ uucUserBaseinfo.id }}</a>{{ last ? '' : ', ' }}
                         </span>
                     </td>
                     <td>

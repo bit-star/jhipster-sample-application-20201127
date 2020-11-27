@@ -82,6 +82,8 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.mp.domain.ManagerUser.class.getName() + ".uucDepartmentTrees");
             createCache(cm, com.lazulite.mp.domain.PortalRouting.class.getName());
             createCache(cm, com.lazulite.mp.domain.DdUserPortalRouting.class.getName());
+            createCache(cm, com.lazulite.mp.domain.UucDepartmentTree.class.getName() + ".microAppGroups");
+            createCache(cm, com.lazulite.mp.domain.UucUserBaseinfo.class.getName() + ".microAppGroups");
             // jhipster-needle-ehcache-add-entry
         };
     }

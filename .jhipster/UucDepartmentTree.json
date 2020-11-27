@@ -100,13 +100,6 @@
   ],
   "relationships": [
     {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "microAppGroup",
-      "otherEntityRelationshipName": "uucDepartmentTree",
-      "relationshipName": "microAppGroup",
-      "otherEntityField": "id"
-    },
-    {
       "relationshipType": "many-to-many",
       "otherEntityName": "fmpMicroApp",
       "otherEntityRelationshipName": "uucDepartmentTrees",
@@ -127,6 +120,14 @@
       "otherEntityName": "fmpSubCompany",
       "otherEntityRelationshipName": "uucDepartmentTree",
       "relationshipName": "fmpSubCompany",
+      "otherEntityField": "id",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "microAppGroup",
+      "otherEntityRelationshipName": "uucDepartmentTree",
+      "relationshipName": "microAppGroup",
       "otherEntityField": "id",
       "ownerSide": false
     }

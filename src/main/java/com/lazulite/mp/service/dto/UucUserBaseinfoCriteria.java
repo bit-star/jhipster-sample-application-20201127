@@ -121,9 +121,9 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
 
     private LongFilter collectionFmpMicroAppId;
 
-    private LongFilter microAppGroupId;
-
     private LongFilter usableFmpMicroAppId;
+
+    private LongFilter microAppGroupId;
 
     public UucUserBaseinfoCriteria() {
     }
@@ -177,8 +177,8 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
         this.hrCardId = other.hrCardId == null ? null : other.hrCardId.copy();
         this.employeeType = other.employeeType == null ? null : other.employeeType.copy();
         this.collectionFmpMicroAppId = other.collectionFmpMicroAppId == null ? null : other.collectionFmpMicroAppId.copy();
-        this.microAppGroupId = other.microAppGroupId == null ? null : other.microAppGroupId.copy();
         this.usableFmpMicroAppId = other.usableFmpMicroAppId == null ? null : other.usableFmpMicroAppId.copy();
+        this.microAppGroupId = other.microAppGroupId == null ? null : other.microAppGroupId.copy();
     }
 
     @Override
@@ -570,20 +570,20 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
         this.collectionFmpMicroAppId = collectionFmpMicroAppId;
     }
 
-    public LongFilter getMicroAppGroupId() {
-        return microAppGroupId;
-    }
-
-    public void setMicroAppGroupId(LongFilter microAppGroupId) {
-        this.microAppGroupId = microAppGroupId;
-    }
-
     public LongFilter getUsableFmpMicroAppId() {
         return usableFmpMicroAppId;
     }
 
     public void setUsableFmpMicroAppId(LongFilter usableFmpMicroAppId) {
         this.usableFmpMicroAppId = usableFmpMicroAppId;
+    }
+
+    public LongFilter getMicroAppGroupId() {
+        return microAppGroupId;
+    }
+
+    public void setMicroAppGroupId(LongFilter microAppGroupId) {
+        this.microAppGroupId = microAppGroupId;
     }
 
 
@@ -645,8 +645,8 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
             Objects.equals(hrCardId, that.hrCardId) &&
             Objects.equals(employeeType, that.employeeType) &&
             Objects.equals(collectionFmpMicroAppId, that.collectionFmpMicroAppId) &&
-            Objects.equals(microAppGroupId, that.microAppGroupId) &&
-            Objects.equals(usableFmpMicroAppId, that.usableFmpMicroAppId);
+            Objects.equals(usableFmpMicroAppId, that.usableFmpMicroAppId) &&
+            Objects.equals(microAppGroupId, that.microAppGroupId);
     }
 
     @Override
@@ -700,8 +700,8 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
         hrCardId,
         employeeType,
         collectionFmpMicroAppId,
-        microAppGroupId,
-        usableFmpMicroAppId
+        usableFmpMicroAppId,
+        microAppGroupId
         );
     }
 
@@ -757,8 +757,8 @@ public class UucUserBaseinfoCriteria implements Serializable, Criteria {
                 (hrCardId != null ? "hrCardId=" + hrCardId + ", " : "") +
                 (employeeType != null ? "employeeType=" + employeeType + ", " : "") +
                 (collectionFmpMicroAppId != null ? "collectionFmpMicroAppId=" + collectionFmpMicroAppId + ", " : "") +
-                (microAppGroupId != null ? "microAppGroupId=" + microAppGroupId + ", " : "") +
                 (usableFmpMicroAppId != null ? "usableFmpMicroAppId=" + usableFmpMicroAppId + ", " : "") +
+                (microAppGroupId != null ? "microAppGroupId=" + microAppGroupId + ", " : "") +
             "}";
     }
 

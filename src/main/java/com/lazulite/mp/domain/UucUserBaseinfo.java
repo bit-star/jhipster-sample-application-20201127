@@ -1,7 +1,6 @@
 package com.lazulite.mp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -171,14 +170,15 @@ public class UucUserBaseinfo implements Serializable {
                inverseJoinColumns = @JoinColumn(name = "collection_fmp_micro_app_id", referencedColumnName = "id"))
     private Set<FmpMicroApp> collectionFmpMicroApps = new HashSet<>();
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "uucUserBaseinfos", allowSetters = true)
-    private MicroAppGroup microAppGroup;
-
     @ManyToMany(mappedBy = "usableUsers")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnore
     private Set<FmpMicroApp> usableFmpMicroApps = new HashSet<>();
+
+    @ManyToMany(mappedBy = "uucUserBaseinfos")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnore
+    private Set<MicroAppGroup> microAppGroups = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -812,19 +812,6 @@ public class UucUserBaseinfo implements Serializable {
         this.collectionFmpMicroApps = fmpMicroApps;
     }
 
-    public MicroAppGroup getMicroAppGroup() {
-        return microAppGroup;
-    }
-
-    public UucUserBaseinfo microAppGroup(MicroAppGroup microAppGroup) {
-        this.microAppGroup = microAppGroup;
-        return this;
-    }
-
-    public void setMicroAppGroup(MicroAppGroup microAppGroup) {
-        this.microAppGroup = microAppGroup;
-    }
-
     public Set<FmpMicroApp> getUsableFmpMicroApps() {
         return usableFmpMicroApps;
     }
@@ -848,6 +835,31 @@ public class UucUserBaseinfo implements Serializable {
 
     public void setUsableFmpMicroApps(Set<FmpMicroApp> fmpMicroApps) {
         this.usableFmpMicroApps = fmpMicroApps;
+    }
+
+    public Set<MicroAppGroup> getMicroAppGroups() {
+        return microAppGroups;
+    }
+
+    public UucUserBaseinfo microAppGroups(Set<MicroAppGroup> microAppGroups) {
+        this.microAppGroups = microAppGroups;
+        return this;
+    }
+
+    public UucUserBaseinfo addMicroAppGroup(MicroAppGroup microAppGroup) {
+        this.microAppGroups.add(microAppGroup);
+        microAppGroup.getUucUserBaseinfos().add(this);
+        return this;
+    }
+
+    public UucUserBaseinfo removeMicroAppGroup(MicroAppGroup microAppGroup) {
+        this.microAppGroups.remove(microAppGroup);
+        microAppGroup.getUucUserBaseinfos().remove(this);
+        return this;
+    }
+
+    public void setMicroAppGroups(Set<MicroAppGroup> microAppGroups) {
+        this.microAppGroups = microAppGroups;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

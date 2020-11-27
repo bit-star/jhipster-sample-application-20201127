@@ -9,8 +9,6 @@ import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IUucDepartmentTreeMp, UucDepartmentTreeMp } from 'app/shared/model/uuc-department-tree-mp.model';
 import { UucDepartmentTreeMpService } from './uuc-department-tree-mp.service';
-import { IMicroAppGroupMp } from 'app/shared/model/micro-app-group-mp.model';
-import { MicroAppGroupMpService } from 'app/entities/micro-app-group-mp/micro-app-group-mp.service';
 
 @Component({
   selector: 'jhi-uuc-department-tree-mp-update',
@@ -18,7 +16,6 @@ import { MicroAppGroupMpService } from 'app/entities/micro-app-group-mp/micro-ap
 })
 export class UucDepartmentTreeMpUpdateComponent implements OnInit {
   isSaving = false;
-  microappgroups: IMicroAppGroupMp[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -46,12 +43,10 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
     srcDeptType: [],
     srcType: [],
     srcDeptUcode: [],
-    microAppGroup: [],
   });
 
   constructor(
     protected uucDepartmentTreeService: UucDepartmentTreeMpService,
-    protected microAppGroupService: MicroAppGroupMpService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -65,8 +60,6 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
       }
 
       this.updateForm(uucDepartmentTree);
-
-      this.microAppGroupService.query().subscribe((res: HttpResponse<IMicroAppGroupMp[]>) => (this.microappgroups = res.body || []));
     });
   }
 
@@ -97,7 +90,6 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
       srcDeptType: uucDepartmentTree.srcDeptType,
       srcType: uucDepartmentTree.srcType,
       srcDeptUcode: uucDepartmentTree.srcDeptUcode,
-      microAppGroup: uucDepartmentTree.microAppGroup,
     });
   }
 
@@ -147,7 +139,6 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
       srcDeptType: this.editForm.get(['srcDeptType'])!.value,
       srcType: this.editForm.get(['srcType'])!.value,
       srcDeptUcode: this.editForm.get(['srcDeptUcode'])!.value,
-      microAppGroup: this.editForm.get(['microAppGroup'])!.value,
     };
   }
 
@@ -165,9 +156,5 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: IMicroAppGroupMp): any {
-    return item.id;
   }
 }

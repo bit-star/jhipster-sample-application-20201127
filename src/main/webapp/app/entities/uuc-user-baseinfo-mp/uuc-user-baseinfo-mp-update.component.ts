@@ -11,10 +11,6 @@ import { IUucUserBaseinfoMp, UucUserBaseinfoMp } from 'app/shared/model/uuc-user
 import { UucUserBaseinfoMpService } from './uuc-user-baseinfo-mp.service';
 import { IFmpMicroAppMp } from 'app/shared/model/fmp-micro-app-mp.model';
 import { FmpMicroAppMpService } from 'app/entities/fmp-micro-app-mp/fmp-micro-app-mp.service';
-import { IMicroAppGroupMp } from 'app/shared/model/micro-app-group-mp.model';
-import { MicroAppGroupMpService } from 'app/entities/micro-app-group-mp/micro-app-group-mp.service';
-
-type SelectableEntity = IFmpMicroAppMp | IMicroAppGroupMp;
 
 @Component({
   selector: 'jhi-uuc-user-baseinfo-mp-update',
@@ -23,7 +19,6 @@ type SelectableEntity = IFmpMicroAppMp | IMicroAppGroupMp;
 export class UucUserBaseinfoMpUpdateComponent implements OnInit {
   isSaving = false;
   fmpmicroapps: IFmpMicroAppMp[] = [];
-  microappgroups: IMicroAppGroupMp[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -74,13 +69,11 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
     hrCardId: [],
     employeeType: [],
     collectionFmpMicroApps: [],
-    microAppGroup: [],
   });
 
   constructor(
     protected uucUserBaseinfoService: UucUserBaseinfoMpService,
     protected fmpMicroAppService: FmpMicroAppMpService,
-    protected microAppGroupService: MicroAppGroupMpService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -98,8 +91,6 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
       this.updateForm(uucUserBaseinfo);
 
       this.fmpMicroAppService.query().subscribe((res: HttpResponse<IFmpMicroAppMp[]>) => (this.fmpmicroapps = res.body || []));
-
-      this.microAppGroupService.query().subscribe((res: HttpResponse<IMicroAppGroupMp[]>) => (this.microappgroups = res.body || []));
     });
   }
 
@@ -153,7 +144,6 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
       hrCardId: uucUserBaseinfo.hrCardId,
       employeeType: uucUserBaseinfo.employeeType,
       collectionFmpMicroApps: uucUserBaseinfo.collectionFmpMicroApps,
-      microAppGroup: uucUserBaseinfo.microAppGroup,
     });
   }
 
@@ -228,7 +218,6 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
       hrCardId: this.editForm.get(['hrCardId'])!.value,
       employeeType: this.editForm.get(['employeeType'])!.value,
       collectionFmpMicroApps: this.editForm.get(['collectionFmpMicroApps'])!.value,
-      microAppGroup: this.editForm.get(['microAppGroup'])!.value,
     };
   }
 
@@ -248,7 +237,7 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: SelectableEntity): any {
+  trackById(index: number, item: IFmpMicroAppMp): any {
     return item.id;
   }
 

@@ -8,22 +8,26 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "uucDepartmentTree",
-      "otherEntityRelationshipName": "microAppGroup",
-      "relationshipName": "uucDepartmentTree"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "uucUserBaseinfo",
-      "otherEntityRelationshipName": "microAppGroup",
-      "relationshipName": "uucUserBaseinfo"
-    },
-    {
       "relationshipType": "many-to-many",
       "otherEntityName": "fmpMicroApp",
       "otherEntityRelationshipName": "microAppGroup",
       "relationshipName": "fmpMicroApp",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucDepartmentTree",
+      "otherEntityRelationshipName": "microAppGroup",
+      "relationshipName": "uucDepartmentTree",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucUserBaseinfo",
+      "otherEntityRelationshipName": "microAppGroup",
+      "relationshipName": "uucUserBaseinfo",
       "otherEntityField": "id",
       "ownerSide": true
     },

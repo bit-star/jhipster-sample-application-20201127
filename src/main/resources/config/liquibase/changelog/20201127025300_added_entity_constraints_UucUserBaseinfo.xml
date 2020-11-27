@@ -20,11 +20,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="fmp_micro_app"/>
         
-        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
-                                 baseTableName="uuc_user_baseinfo"
-                                 constraintName="fk_uuc_user_baseinfo_micro_app_group_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="micro_app_group"/>
-
     </changeSet>
 </databaseChangeLog>

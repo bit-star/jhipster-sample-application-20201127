@@ -40,10 +40,10 @@
       "srcDeptType": "Src Dept Type",
       "srcType": "Src Type",
       "srcDeptUcode": "Src Dept Ucode",
-      "microAppGroup": "Micro App Group",
       "usable": "Usable",
       "manager": "Manager",
-      "fmpSubCompany": "Fmp Sub Company"
+      "fmpSubCompany": "Fmp Sub Company",
+      "microAppGroup": "Micro App Group"
     }
   }
 }
