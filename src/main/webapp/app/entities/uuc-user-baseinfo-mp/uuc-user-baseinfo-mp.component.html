@@ -1,0 +1,167 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.home.title">Uuc User Baseinfos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-uuc-user-baseinfo-mp" [routerLink]="['/uuc-user-baseinfo-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.home.createLabel">
+            Create a new Uuc User Baseinfo
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="uucUserBaseinfos?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.home.notFound">No uucUserBaseinfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="uucUserBaseinfos && uucUserBaseinfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="jobCode"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.jobCode">Job Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="type"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.type">Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fullname"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.fullname">Fullname</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="namePy"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.namePy">Name Py</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sex"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.sex">Sex</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="birthday"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.birthday">Birthday</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tel"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.tel">Tel</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telExt"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.telExt">Tel Ext</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode1"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode1">State Code 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile1"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile1">Mobile 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode2"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode2">State Code 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile2"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile2">Mobile 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode3"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode3">State Code 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile3"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile3">Mobile 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode4"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode4">State Code 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile4"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile4">Mobile 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode5"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode5">State Code 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile5"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile5">Mobile 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titleDesc"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.titleDesc">Title Desc</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titleEn"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.titleEn">Title En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="checkNum"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.checkNum">Check Num</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="disporder"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.disporder">Disporder</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="workPlace"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.workPlace">Work Place</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="userLevel"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.userLevel">User Level</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="hiredate"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.hiredate">Hiredate</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nickname"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.nickname">Nickname</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="memo"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isHidden"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isHidden">Is Hidden</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="aliveFlag"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.aliveFlag">Alive Flag</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recCreateTime"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recCreateTime">Rec Create Time</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recCreator"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recCreator">Rec Creator</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recReviseTime"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recReviseTime">Rec Revise Time</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recRevisor"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recRevisor">Rec Revisor</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isActivated"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isActivated">Is Activated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="activationTime"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.activationTime">Activation Time</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="appVersion"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.appVersion">App Version</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isOnlyAdminTitle"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isOnlyAdminTitle">Is Only Admin Title</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="jobnumber"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.jobnumber">Jobnumber</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="avatar"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.avatar">Avatar</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enName"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enName">En Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enWorkplace"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enWorkplace">En Workplace</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enTitleDesc"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enTitleDesc">En Title Desc</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="onlyCode"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.onlyCode">Only Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="hrCardId"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.hrCardId">Hr Card Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="employeeType"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.employeeType">Employee Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="microAppGroup.id"><span jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.microAppGroup">Micro App Group</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let uucUserBaseinfo of uucUserBaseinfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo.id, 'view']">{{ uucUserBaseinfo.id }}</a></td>
+                    <td>{{ uucUserBaseinfo.jobCode }}</td>
+                    <td>{{ uucUserBaseinfo.type }}</td>
+                    <td>{{ uucUserBaseinfo.fullname }}</td>
+                    <td>{{ uucUserBaseinfo.namePy }}</td>
+                    <td>{{ uucUserBaseinfo.sex }}</td>
+                    <td>{{ uucUserBaseinfo.birthday }}</td>
+                    <td>{{ uucUserBaseinfo.email }}</td>
+                    <td>{{ uucUserBaseinfo.tel }}</td>
+                    <td>{{ uucUserBaseinfo.telExt }}</td>
+                    <td>{{ uucUserBaseinfo.stateCode1 }}</td>
+                    <td>{{ uucUserBaseinfo.mobile1 }}</td>
+                    <td>{{ uucUserBaseinfo.stateCode2 }}</td>
+                    <td>{{ uucUserBaseinfo.mobile2 }}</td>
+                    <td>{{ uucUserBaseinfo.stateCode3 }}</td>
+                    <td>{{ uucUserBaseinfo.mobile3 }}</td>
+                    <td>{{ uucUserBaseinfo.stateCode4 }}</td>
+                    <td>{{ uucUserBaseinfo.mobile4 }}</td>
+                    <td>{{ uucUserBaseinfo.stateCode5 }}</td>
+                    <td>{{ uucUserBaseinfo.mobile5 }}</td>
+                    <td>{{ uucUserBaseinfo.titleDesc }}</td>
+                    <td>{{ uucUserBaseinfo.titleEn }}</td>
+                    <td>{{ uucUserBaseinfo.checkNum }}</td>
+                    <td>{{ uucUserBaseinfo.disporder }}</td>
+                    <td>{{ uucUserBaseinfo.workPlace }}</td>
+                    <td>{{ uucUserBaseinfo.userLevel }}</td>
+                    <td>{{ uucUserBaseinfo.hiredate | date:'medium' }}</td>
+                    <td>{{ uucUserBaseinfo.nickname }}</td>
+                    <td>{{ uucUserBaseinfo.memo }}</td>
+                    <td>{{ uucUserBaseinfo.isHidden }}</td>
+                    <td>{{ uucUserBaseinfo.aliveFlag }}</td>
+                    <td>{{ uucUserBaseinfo.recCreateTime | date:'medium' }}</td>
+                    <td>{{ uucUserBaseinfo.recCreator }}</td>
+                    <td>{{ uucUserBaseinfo.recReviseTime | date:'medium' }}</td>
+                    <td>{{ uucUserBaseinfo.recRevisor }}</td>
+                    <td>{{ uucUserBaseinfo.isActivated }}</td>
+                    <td>{{ uucUserBaseinfo.activationTime | date:'medium' }}</td>
+                    <td>{{ uucUserBaseinfo.appVersion }}</td>
+                    <td>{{ uucUserBaseinfo.isOnlyAdminTitle }}</td>
+                    <td>{{ uucUserBaseinfo.jobnumber }}</td>
+                    <td>{{ uucUserBaseinfo.avatar }}</td>
+                    <td>{{ uucUserBaseinfo.enName }}</td>
+                    <td>{{ uucUserBaseinfo.enWorkplace }}</td>
+                    <td>{{ uucUserBaseinfo.enTitleDesc }}</td>
+                    <td>{{ uucUserBaseinfo.onlyCode }}</td>
+                    <td>{{ uucUserBaseinfo.hrCardId }}</td>
+                    <td>{{ uucUserBaseinfo.employeeType }}</td>
+                    <td>
+                        <div *ngIf="uucUserBaseinfo.microAppGroup">
+                            <a [routerLink]="['/micro-app-group-mp', uucUserBaseinfo.microAppGroup?.id, 'view']" >{{ uucUserBaseinfo.microAppGroup?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(uucUserBaseinfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="uucUserBaseinfos && uucUserBaseinfos.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

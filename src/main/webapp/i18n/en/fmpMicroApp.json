@@ -1,0 +1,65 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "fmpMicroApp": {
+      "home": {
+        "title": "Fmp Micro Apps",
+        "createLabel": "Create a new Fmp Micro App",
+        "createOrEditLabel": "Create or edit a Fmp Micro App",
+        "notFound": "No Fmp Micro Apps found"
+      },
+      "created": "A new Fmp Micro App is created with identifier {{ param }}",
+      "updated": "A Fmp Micro App is updated with identifier {{ param }}",
+      "deleted": "A Fmp Micro App is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fmp Micro App {{ id }}?"
+      },
+      "detail": {
+        "title": "Fmp Micro App"
+      },
+      "catCode": "Cat Code",
+      "parentCatId": "Parent Cat Id",
+      "levelNumber": "Level Number",
+      "isLeaf": "Is Leaf",
+      "businessCode": "Business Code",
+      "endpointUrl": "Endpoint Url",
+      "iconImg": "Icon Img",
+      "bannerImg": "Banner Img",
+      "thumbnail": "Thumbnail",
+      "sortCode": "Sort Code",
+      "systemType": "System Type",
+      "contentOwnerCode": "Content Owner Code",
+      "lable": "Lable",
+      "isNew": "Is New",
+      "status": "Status",
+      "openMethod": "Open Method",
+      "language": "Language",
+      "isFixed": "Is Fixed",
+      "tagKey01": "Tag Key 01",
+      "tagVal01": "Tag Val 01",
+      "tagKey02": "Tag Key 02",
+      "tagVal02": "Tag Val 02",
+      "tagKey03": "Tag Key 03",
+      "tagVal03": "Tag Val 03",
+      "catName": "Cat Name",
+      "filterSql": "Filter Sql",
+      "sharingFlag": "Sharing Flag",
+      "category": "Category",
+      "imgClass": "Img Class",
+      "isInternal": "Is Internal",
+      "customFlag": "Custom Flag",
+      "portal": "Portal",
+      "description": "Description",
+      "businessUnit": "Business Unit",
+      "businessOwners": "Business Owners",
+      "businessOwnersMobile": "Business Owners Mobile",
+      "fmpWidgetInfo": "Fmp Widget Info",
+      "uucDepartmentTrees": "Uuc Department Trees",
+      "usableUser": "Usable User",
+      "fmpMicroAppType": "Fmp Micro App Type",
+      "creatorCompany": "Creator Company",
+      "fmpSubCompany": "Fmp Sub Company",
+      "collectionUsers": "Collection Users",
+      "microAppGroup": "Micro App Group"
+    }
+  }
+}

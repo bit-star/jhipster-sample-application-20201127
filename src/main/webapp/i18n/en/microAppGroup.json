@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "microAppGroup": {
+      "home": {
+        "title": "Micro App Groups",
+        "createLabel": "Create a new Micro App Group",
+        "createOrEditLabel": "Create or edit a Micro App Group",
+        "notFound": "No Micro App Groups found"
+      },
+      "created": "A new Micro App Group is created with identifier {{ param }}",
+      "updated": "A Micro App Group is updated with identifier {{ param }}",
+      "deleted": "A Micro App Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Micro App Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Micro App Group"
+      },
+      "name": "Name",
+      "uucDepartmentTree": "Uuc Department Tree",
+      "uucUserBaseinfo": "Uuc User Baseinfo",
+      "fmpMicroApp": "Fmp Micro App",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

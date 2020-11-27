@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "WidgetContentType": {
+      "null": "",
+      "List": "List",
+      "Image": "Image",
+      "Html": "Html"
+    }
+  }
+}

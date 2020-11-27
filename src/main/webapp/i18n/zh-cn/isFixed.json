@@ -1,0 +1,9 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "IsFixed": {
+      "null": "",
+      "Fixed": "Fixed",
+      "NotFixed": "NotFixed"
+    }
+  }
+}

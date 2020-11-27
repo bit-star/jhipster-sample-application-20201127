@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "fmpMicroAppType": {
+      "home": {
+        "title": "Fmp Micro App Types",
+        "createLabel": "Create a new Fmp Micro App Type",
+        "createOrEditLabel": "Create or edit a Fmp Micro App Type",
+        "notFound": "No Fmp Micro App Types found"
+      },
+      "created": "A new Fmp Micro App Type is created with identifier {{ param }}",
+      "updated": "A Fmp Micro App Type is updated with identifier {{ param }}",
+      "deleted": "A Fmp Micro App Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fmp Micro App Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Fmp Micro App Type"
+      },
+      "code": "Code",
+      "name": "Name",
+      "language": "Language",
+      "portalId": "Portal Id",
+      "isDeleted": "Is Deleted",
+      "fmpMicroApp": "Fmp Micro App",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

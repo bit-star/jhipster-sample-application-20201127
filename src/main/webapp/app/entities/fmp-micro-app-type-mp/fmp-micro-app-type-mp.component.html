@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.home.title">Fmp Micro App Types</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fmp-micro-app-type-mp" [routerLink]="['/fmp-micro-app-type-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.home.createLabel">
+            Create a new Fmp Micro App Type
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fmpMicroAppTypes?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.home.notFound">No fmpMicroAppTypes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fmpMicroAppTypes && fmpMicroAppTypes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.code">Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.language">Language</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.portalId">Portal Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.isDeleted">Is Deleted</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.fmpMicroAppType.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fmpMicroAppType of fmpMicroAppTypes ;trackBy: trackId">
+                    <td><a [routerLink]="['/fmp-micro-app-type-mp', fmpMicroAppType.id, 'view']">{{ fmpMicroAppType.id }}</a></td>
+                    <td>{{ fmpMicroAppType.code }}</td>
+                    <td>{{ fmpMicroAppType.name }}</td>
+                    <td>{{ fmpMicroAppType.language }}</td>
+                    <td>{{ fmpMicroAppType.portalId }}</td>
+                    <td>{{ fmpMicroAppType.isDeleted }}</td>
+                    <td>
+                        <div *ngIf="fmpMicroAppType.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', fmpMicroAppType.fmpSubCompany?.id, 'view']" >{{ fmpMicroAppType.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fmp-micro-app-type-mp', fmpMicroAppType.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fmp-micro-app-type-mp', fmpMicroAppType.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fmpMicroAppType)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-uuc-department-tree-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.home.createOrEditLabel">Create or edit a Uuc Department Tree</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePy" for="field_namePy">Name Py</label>
+                    <input type="text" class="form-control" name="namePy" id="field_namePy"
+                           formControlName="namePy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepId" for="field_parentDepId">Parent Dep Id</label>
+                    <input type="text" class="form-control" name="parentDepId" id="field_parentDepId"
+                           formControlName="parentDepId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.parentDepName" for="field_parentDepName">Parent Dep Name</label>
+                    <input type="text" class="form-control" name="parentDepName" id="field_parentDepName"
+                           formControlName="parentDepName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.disporder" for="field_disporder">Disporder</label>
+                    <input type="text" class="form-control" name="disporder" id="field_disporder"
+                           formControlName="disporder"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.namePath" for="field_namePath">Name Path</label>
+                    <input type="text" class="form-control" name="namePath" id="field_namePath"
+                           formControlName="namePath"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.codePath" for="field_codePath">Code Path</label>
+                    <input type="text" class="form-control" name="codePath" id="field_codePath"
+                           formControlName="codePath"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depIdPath" for="field_depIdPath">Dep Id Path</label>
+                    <input type="text" class="form-control" name="depIdPath" id="field_depIdPath"
+                           formControlName="depIdPath"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.depLevel" for="field_depLevel">Dep Level</label>
+                    <input type="text" class="form-control" name="depLevel" id="field_depLevel"
+                           formControlName="depLevel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.aliveFlag" for="field_aliveFlag">Alive Flag</label>
+                    <input type="text" class="form-control" name="aliveFlag" id="field_aliveFlag"
+                           formControlName="aliveFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreateTime" for="field_recCreateTime">Rec Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_recCreateTime" type="datetime-local" class="form-control" name="recCreateTime" formControlName="recCreateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recCreator" for="field_recCreator">Rec Creator</label>
+                    <input type="text" class="form-control" name="recCreator" id="field_recCreator"
+                           formControlName="recCreator"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recReviseTime" for="field_recReviseTime">Rec Revise Time</label>
+                    <div class="d-flex">
+                        <input id="field_recReviseTime" type="datetime-local" class="form-control" name="recReviseTime" formControlName="recReviseTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.recRevisor" for="field_recRevisor">Rec Revisor</label>
+                    <input type="text" class="form-control" name="recRevisor" id="field_recRevisor"
+                           formControlName="recRevisor"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.deptUserCount" for="field_deptUserCount">Dept User Count</label>
+                    <input type="text" class="form-control" name="deptUserCount" id="field_deptUserCount"
+                           formControlName="deptUserCount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microappId" for="field_microappId">Microapp Id</label>
+                    <input type="text" class="form-control" name="microappId" id="field_microappId"
+                           formControlName="microappId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.enName" for="field_enName">En Name</label>
+                    <input type="text" class="form-control" name="enName" id="field_enName"
+                           formControlName="enName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.onlyCode" for="field_onlyCode">Only Code</label>
+                    <input type="text" class="form-control" name="onlyCode" id="field_onlyCode"
+                           formControlName="onlyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptId" for="field_srcDeptId">Src Dept Id</label>
+                    <input type="text" class="form-control" name="srcDeptId" id="field_srcDeptId"
+                           formControlName="srcDeptId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptType" for="field_srcDeptType">Src Dept Type</label>
+                    <input type="text" class="form-control" name="srcDeptType" id="field_srcDeptType"
+                           formControlName="srcDeptType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcType" for="field_srcType">Src Type</label>
+                    <input type="text" class="form-control" name="srcType" id="field_srcType"
+                           formControlName="srcType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.srcDeptUcode" for="field_srcDeptUcode">Src Dept Ucode</label>
+                    <input type="text" class="form-control" name="srcDeptUcode" id="field_srcDeptUcode"
+                           formControlName="srcDeptUcode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucDepartmentTree.microAppGroup" for="field_microAppGroup">Micro App Group</label>
+                    <select class="form-control" id="field_microAppGroup" name="microAppGroup" formControlName="microAppGroup">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="microAppGroupOption.id === editForm.get('microAppGroup')!.value?.id ? editForm.get('microAppGroup')!.value : microAppGroupOption" *ngFor="let microAppGroupOption of microappgroups; trackBy: trackById">{{ microAppGroupOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

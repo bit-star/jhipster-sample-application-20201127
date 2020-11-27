@@ -1,0 +1,33 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "fmpWidgetInfo": {
+      "home": {
+        "title": "Fmp Widget Infos",
+        "createLabel": "Create a new Fmp Widget Info",
+        "createOrEditLabel": "Create or edit a Fmp Widget Info",
+        "notFound": "No Fmp Widget Infos found"
+      },
+      "created": "A new Fmp Widget Info is created with identifier {{ param }}",
+      "updated": "A Fmp Widget Info is updated with identifier {{ param }}",
+      "deleted": "A Fmp Widget Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fmp Widget Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Fmp Widget Info"
+      },
+      "code": "Code",
+      "portalId": "Portal Id",
+      "title": "Title",
+      "catId": "Cat Id",
+      "dataUrl": "Data Url",
+      "sort": "Sort",
+      "dataUrlParam": "Data Url Param",
+      "isTop": "Is Top",
+      "contentType": "Content Type",
+      "type": "Type",
+      "isDeleted": "Is Deleted",
+      "fmpMicroApp": "Fmp Micro App"
+    }
+  }
+}

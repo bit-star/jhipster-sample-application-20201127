@@ -1,0 +1,70 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "uucUserBaseinfo": {
+      "home": {
+        "title": "Uuc User Baseinfos",
+        "createLabel": "Create a new Uuc User Baseinfo",
+        "createOrEditLabel": "Create or edit a Uuc User Baseinfo",
+        "notFound": "No Uuc User Baseinfos found"
+      },
+      "created": "A new Uuc User Baseinfo is created with identifier {{ param }}",
+      "updated": "A Uuc User Baseinfo is updated with identifier {{ param }}",
+      "deleted": "A Uuc User Baseinfo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Uuc User Baseinfo {{ id }}?"
+      },
+      "detail": {
+        "title": "Uuc User Baseinfo"
+      },
+      "jobCode": "Job Code",
+      "type": "Type",
+      "fullname": "Fullname",
+      "namePy": "Name Py",
+      "sex": "Sex",
+      "birthday": "Birthday",
+      "email": "Email",
+      "tel": "Tel",
+      "telExt": "Tel Ext",
+      "stateCode1": "State Code 1",
+      "mobile1": "Mobile 1",
+      "stateCode2": "State Code 2",
+      "mobile2": "Mobile 2",
+      "stateCode3": "State Code 3",
+      "mobile3": "Mobile 3",
+      "stateCode4": "State Code 4",
+      "mobile4": "Mobile 4",
+      "stateCode5": "State Code 5",
+      "mobile5": "Mobile 5",
+      "titleDesc": "Title Desc",
+      "titleEn": "Title En",
+      "checkNum": "Check Num",
+      "disporder": "Disporder",
+      "workPlace": "Work Place",
+      "userLevel": "User Level",
+      "hiredate": "Hiredate",
+      "nickname": "Nickname",
+      "memo": "Memo",
+      "isHidden": "Is Hidden",
+      "aliveFlag": "Alive Flag",
+      "recCreateTime": "Rec Create Time",
+      "recCreator": "Rec Creator",
+      "recReviseTime": "Rec Revise Time",
+      "recRevisor": "Rec Revisor",
+      "isActivated": "Is Activated",
+      "activationTime": "Activation Time",
+      "appVersion": "App Version",
+      "isOnlyAdminTitle": "Is Only Admin Title",
+      "jobnumber": "Jobnumber",
+      "avatar": "Avatar",
+      "enName": "En Name",
+      "enWorkplace": "En Workplace",
+      "enTitleDesc": "En Title Desc",
+      "onlyCode": "Only Code",
+      "hrCardId": "Hr Card Id",
+      "employeeType": "Employee Type",
+      "collectionFmpMicroApp": "Collection Fmp Micro App",
+      "microAppGroup": "Micro App Group",
+      "usableFmpMicroApp": "Usable Fmp Micro App"
+    }
+  }
+}

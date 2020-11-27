@@ -1,0 +1,9 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "MicroAppStatus": {
+      "null": "",
+      "OffLine": "OffLine",
+      "OnLIne": "OnLIne"
+    }
+  }
+}

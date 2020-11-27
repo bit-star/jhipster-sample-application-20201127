@@ -1,0 +1,65 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "fmpMicroApp": {
+      "home": {
+        "title": "Fmp Micro Apps",
+        "createLabel": "创建新 Fmp Micro App",
+        "createOrEditLabel": "创建或编辑 Fmp Micro App",
+        "notFound": "No Fmp Micro Apps found"
+      },
+      "created": "Fmp Micro App {{ param }} 创建成功",
+      "updated": "Fmp Micro App {{ param }} 更新成功",
+      "deleted": "Fmp Micro App {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Fmp Micro App {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Fmp Micro App"
+      },
+      "catCode": "Cat Code",
+      "parentCatId": "Parent Cat Id",
+      "levelNumber": "Level Number",
+      "isLeaf": "Is Leaf",
+      "businessCode": "Business Code",
+      "endpointUrl": "Endpoint Url",
+      "iconImg": "Icon Img",
+      "bannerImg": "Banner Img",
+      "thumbnail": "Thumbnail",
+      "sortCode": "Sort Code",
+      "systemType": "System Type",
+      "contentOwnerCode": "Content Owner Code",
+      "lable": "Lable",
+      "isNew": "Is New",
+      "status": "Status",
+      "openMethod": "Open Method",
+      "language": "Language",
+      "isFixed": "Is Fixed",
+      "tagKey01": "Tag Key 01",
+      "tagVal01": "Tag Val 01",
+      "tagKey02": "Tag Key 02",
+      "tagVal02": "Tag Val 02",
+      "tagKey03": "Tag Key 03",
+      "tagVal03": "Tag Val 03",
+      "catName": "Cat Name",
+      "filterSql": "Filter Sql",
+      "sharingFlag": "Sharing Flag",
+      "category": "Category",
+      "imgClass": "Img Class",
+      "isInternal": "Is Internal",
+      "customFlag": "Custom Flag",
+      "portal": "Portal",
+      "description": "Description",
+      "businessUnit": "Business Unit",
+      "businessOwners": "Business Owners",
+      "businessOwnersMobile": "Business Owners Mobile",
+      "fmpWidgetInfo": "Fmp Widget Info",
+      "uucDepartmentTrees": "Uuc Department Trees",
+      "usableUser": "Usable User",
+      "fmpMicroAppType": "Fmp Micro App Type",
+      "creatorCompany": "Creator Company",
+      "fmpSubCompany": "Fmp Sub Company",
+      "collectionUsers": "Collection Users",
+      "microAppGroup": "Micro App Group"
+    }
+  }
+}

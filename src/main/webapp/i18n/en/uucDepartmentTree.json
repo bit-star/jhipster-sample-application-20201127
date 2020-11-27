@@ -1,0 +1,49 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "uucDepartmentTree": {
+      "home": {
+        "title": "Uuc Department Trees",
+        "createLabel": "Create a new Uuc Department Tree",
+        "createOrEditLabel": "Create or edit a Uuc Department Tree",
+        "notFound": "No Uuc Department Trees found"
+      },
+      "created": "A new Uuc Department Tree is created with identifier {{ param }}",
+      "updated": "A Uuc Department Tree is updated with identifier {{ param }}",
+      "deleted": "A Uuc Department Tree is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Uuc Department Tree {{ id }}?"
+      },
+      "detail": {
+        "title": "Uuc Department Tree"
+      },
+      "name": "Name",
+      "namePy": "Name Py",
+      "code": "Code",
+      "parentDepId": "Parent Dep Id",
+      "parentDepName": "Parent Dep Name",
+      "status": "Status",
+      "disporder": "Disporder",
+      "namePath": "Name Path",
+      "codePath": "Code Path",
+      "depIdPath": "Dep Id Path",
+      "depLevel": "Dep Level",
+      "aliveFlag": "Alive Flag",
+      "recCreateTime": "Rec Create Time",
+      "recCreator": "Rec Creator",
+      "recReviseTime": "Rec Revise Time",
+      "recRevisor": "Rec Revisor",
+      "deptUserCount": "Dept User Count",
+      "microappId": "Microapp Id",
+      "enName": "En Name",
+      "onlyCode": "Only Code",
+      "srcDeptId": "Src Dept Id",
+      "srcDeptType": "Src Dept Type",
+      "srcType": "Src Type",
+      "srcDeptUcode": "Src Dept Ucode",
+      "microAppGroup": "Micro App Group",
+      "usable": "Usable",
+      "manager": "Manager",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

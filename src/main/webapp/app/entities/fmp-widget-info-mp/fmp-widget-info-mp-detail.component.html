@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fmpWidgetInfo">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.detail.title">Fmp Widget Info</span> {{ fmpWidgetInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.code">Code</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.portalId">Portal Id</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.portalId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.title">Title</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.catId">Cat Id</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.catId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrl">Data Url</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.dataUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.sort">Sort</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.sort }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.dataUrlParam">Data Url Param</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplication20201127App.PassingForm.' + fmpWidgetInfo.dataUrlParam }}">{{ fmpWidgetInfo.dataUrlParam }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isTop">Is Top</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplication20201127App.TopOption.' + fmpWidgetInfo.isTop }}">{{ fmpWidgetInfo.isTop }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.contentType">Content Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplication20201127App.WidgetContentType.' + fmpWidgetInfo.contentType }}">{{ fmpWidgetInfo.contentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplication20201127App.WidgeType.' + fmpWidgetInfo.type }}">{{ fmpWidgetInfo.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.isDeleted">Is Deleted</span></dt>
+                <dd>
+                    <span>{{ fmpWidgetInfo.isDeleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.fmpWidgetInfo.fmpMicroApp">Fmp Micro App</span></dt>
+                <dd>
+                    <div *ngIf="fmpWidgetInfo.fmpMicroApp">
+                        <a [routerLink]="['/fmp-micro-app-mp', fmpWidgetInfo.fmpMicroApp?.id, 'view']">{{ fmpWidgetInfo.fmpMicroApp?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fmp-widget-info-mp', fmpWidgetInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

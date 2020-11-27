@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.home.title">Dd User Portal Routings</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dd-user-portal-routing-mp" [routerLink]="['/dd-user-portal-routing-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.home.createLabel">
+            Create a new Dd User Portal Routing
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="ddUserPortalRoutings?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.home.notFound">No ddUserPortalRoutings found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="ddUserPortalRoutings && ddUserPortalRoutings.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.jobCode">Job Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.mobile">Mobile</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.microappUrl">Microapp Url</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.injectionFlag">Injection Flag</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.injectionApiUri">Injection Api Uri</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplication20201127App.ddUserPortalRouting.mucAppId">Muc App Id</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ddUserPortalRouting of ddUserPortalRoutings ;trackBy: trackId">
+                    <td><a [routerLink]="['/dd-user-portal-routing-mp', ddUserPortalRouting.id, 'view']">{{ ddUserPortalRouting.id }}</a></td>
+                    <td>{{ ddUserPortalRouting.jobCode }}</td>
+                    <td>{{ ddUserPortalRouting.mobile }}</td>
+                    <td>{{ ddUserPortalRouting.microappUrl }}</td>
+                    <td>{{ ddUserPortalRouting.injectionFlag }}</td>
+                    <td>{{ ddUserPortalRouting.injectionApiUri }}</td>
+                    <td>{{ ddUserPortalRouting.mucAppId }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dd-user-portal-routing-mp', ddUserPortalRouting.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dd-user-portal-routing-mp', ddUserPortalRouting.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(ddUserPortalRouting)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

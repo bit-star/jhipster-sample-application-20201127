@@ -1,0 +1,164 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dd-user-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.home.createOrEditLabel">Create or edit a Dd User</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.unionid" for="field_unionid">Unionid</label>
+                    <input type="text" class="form-control" name="unionid" id="field_unionid"
+                           formControlName="unionid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                           formControlName="remark"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.userid" for="field_userid">Userid</label>
+                    <input type="text" class="form-control" name="userid" id="field_userid"
+                           formControlName="userid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isLeaderInDepts" for="field_isLeaderInDepts">Is Leader In Depts</label>
+                    <input type="text" class="form-control" name="isLeaderInDepts" id="field_isLeaderInDepts"
+                           formControlName="isLeaderInDepts"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isBoss" for="field_isBoss">Is Boss</label>
+                    <input type="checkbox" class="form-control" name="isBoss" id="field_isBoss"
+                           formControlName="isBoss"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.hiredDate" for="field_hiredDate">Hired Date</label>
+                    <input type="number" class="form-control" name="hiredDate" id="field_hiredDate"
+                           formControlName="hiredDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isSenior" for="field_isSenior">Is Senior</label>
+                    <input type="checkbox" class="form-control" name="isSenior" id="field_isSenior"
+                           formControlName="isSenior"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.tel" for="field_tel">Tel</label>
+                    <input type="text" class="form-control" name="tel" id="field_tel"
+                           formControlName="tel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.department" for="field_department">Department</label>
+                    <input type="text" class="form-control" name="department" id="field_department"
+                           formControlName="department"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.workPlace" for="field_workPlace">Work Place</label>
+                    <input type="text" class="form-control" name="workPlace" id="field_workPlace"
+                           formControlName="workPlace"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.orderInDepts" for="field_orderInDepts">Order In Depts</label>
+                    <input type="text" class="form-control" name="orderInDepts" id="field_orderInDepts"
+                           formControlName="orderInDepts"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.mobile" for="field_mobile">Mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="field_mobile"
+                           formControlName="mobile"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.errmsg" for="field_errmsg">Errmsg</label>
+                    <input type="text" class="form-control" name="errmsg" id="field_errmsg"
+                           formControlName="errmsg"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                           formControlName="avatar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isAdmin" for="field_isAdmin">Is Admin</label>
+                    <input type="checkbox" class="form-control" name="isAdmin" id="field_isAdmin"
+                           formControlName="isAdmin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.isHide" for="field_isHide">Is Hide</label>
+                    <input type="checkbox" class="form-control" name="isHide" id="field_isHide"
+                           formControlName="isHide"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.jobnumber" for="field_jobnumber">Jobnumber</label>
+                    <input type="text" class="form-control" name="jobnumber" id="field_jobnumber"
+                           formControlName="jobnumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.extattr" for="field_extattr">Extattr</label>
+                    <input type="text" class="form-control" name="extattr" id="field_extattr"
+                           formControlName="extattr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.stateCode" for="field_stateCode">State Code</label>
+                    <input type="text" class="form-control" name="stateCode" id="field_stateCode"
+                           formControlName="stateCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.position" for="field_position">Position</label>
+                    <input type="text" class="form-control" name="position" id="field_position"
+                           formControlName="position"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.ddUser.roles" for="field_roles">Roles</label>
+                    <input type="text" class="form-control" name="roles" id="field_roles"
+                           formControlName="roles"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

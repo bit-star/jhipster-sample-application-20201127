@@ -1,0 +1,321 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-uuc-user-baseinfo-mp-heading" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.home.createOrEditLabel">Create or edit a Uuc User Baseinfo</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.jobCode" for="field_jobCode">Job Code</label>
+                    <input type="text" class="form-control" name="jobCode" id="field_jobCode"
+                           formControlName="jobCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.fullname" for="field_fullname">Fullname</label>
+                    <input type="text" class="form-control" name="fullname" id="field_fullname"
+                           formControlName="fullname"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.namePy" for="field_namePy">Name Py</label>
+                    <input type="text" class="form-control" name="namePy" id="field_namePy"
+                           formControlName="namePy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.sex" for="field_sex">Sex</label>
+                    <input type="text" class="form-control" name="sex" id="field_sex"
+                           formControlName="sex"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.birthday" for="field_birthday">Birthday</label>
+                    <input type="text" class="form-control" name="birthday" id="field_birthday"
+                           formControlName="birthday"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.tel" for="field_tel">Tel</label>
+                    <input type="text" class="form-control" name="tel" id="field_tel"
+                           formControlName="tel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.telExt" for="field_telExt">Tel Ext</label>
+                    <input type="text" class="form-control" name="telExt" id="field_telExt"
+                           formControlName="telExt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode1" for="field_stateCode1">State Code 1</label>
+                    <input type="text" class="form-control" name="stateCode1" id="field_stateCode1"
+                           formControlName="stateCode1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile1" for="field_mobile1">Mobile 1</label>
+                    <input type="text" class="form-control" name="mobile1" id="field_mobile1"
+                           formControlName="mobile1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode2" for="field_stateCode2">State Code 2</label>
+                    <input type="text" class="form-control" name="stateCode2" id="field_stateCode2"
+                           formControlName="stateCode2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile2" for="field_mobile2">Mobile 2</label>
+                    <input type="text" class="form-control" name="mobile2" id="field_mobile2"
+                           formControlName="mobile2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode3" for="field_stateCode3">State Code 3</label>
+                    <input type="text" class="form-control" name="stateCode3" id="field_stateCode3"
+                           formControlName="stateCode3"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile3" for="field_mobile3">Mobile 3</label>
+                    <input type="text" class="form-control" name="mobile3" id="field_mobile3"
+                           formControlName="mobile3"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode4" for="field_stateCode4">State Code 4</label>
+                    <input type="text" class="form-control" name="stateCode4" id="field_stateCode4"
+                           formControlName="stateCode4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile4" for="field_mobile4">Mobile 4</label>
+                    <input type="text" class="form-control" name="mobile4" id="field_mobile4"
+                           formControlName="mobile4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.stateCode5" for="field_stateCode5">State Code 5</label>
+                    <input type="text" class="form-control" name="stateCode5" id="field_stateCode5"
+                           formControlName="stateCode5"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.mobile5" for="field_mobile5">Mobile 5</label>
+                    <input type="text" class="form-control" name="mobile5" id="field_mobile5"
+                           formControlName="mobile5"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.titleDesc" for="field_titleDesc">Title Desc</label>
+                    <input type="text" class="form-control" name="titleDesc" id="field_titleDesc"
+                           formControlName="titleDesc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.titleEn" for="field_titleEn">Title En</label>
+                    <input type="text" class="form-control" name="titleEn" id="field_titleEn"
+                           formControlName="titleEn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.checkNum" for="field_checkNum">Check Num</label>
+                    <input type="text" class="form-control" name="checkNum" id="field_checkNum"
+                           formControlName="checkNum"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.disporder" for="field_disporder">Disporder</label>
+                    <input type="number" class="form-control" name="disporder" id="field_disporder"
+                           formControlName="disporder"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.workPlace" for="field_workPlace">Work Place</label>
+                    <input type="text" class="form-control" name="workPlace" id="field_workPlace"
+                           formControlName="workPlace"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.userLevel" for="field_userLevel">User Level</label>
+                    <input type="text" class="form-control" name="userLevel" id="field_userLevel"
+                           formControlName="userLevel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.hiredate" for="field_hiredate">Hiredate</label>
+                    <div class="d-flex">
+                        <input id="field_hiredate" type="datetime-local" class="form-control" name="hiredate" formControlName="hiredate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.nickname" for="field_nickname">Nickname</label>
+                    <input type="text" class="form-control" name="nickname" id="field_nickname"
+                           formControlName="nickname"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.memo" for="field_memo">Memo</label>
+                    <input type="text" class="form-control" name="memo" id="field_memo"
+                           formControlName="memo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isHidden" for="field_isHidden">Is Hidden</label>
+                    <input type="text" class="form-control" name="isHidden" id="field_isHidden"
+                           formControlName="isHidden"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.aliveFlag" for="field_aliveFlag">Alive Flag</label>
+                    <input type="text" class="form-control" name="aliveFlag" id="field_aliveFlag"
+                           formControlName="aliveFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recCreateTime" for="field_recCreateTime">Rec Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_recCreateTime" type="datetime-local" class="form-control" name="recCreateTime" formControlName="recCreateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recCreator" for="field_recCreator">Rec Creator</label>
+                    <input type="text" class="form-control" name="recCreator" id="field_recCreator"
+                           formControlName="recCreator"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recReviseTime" for="field_recReviseTime">Rec Revise Time</label>
+                    <div class="d-flex">
+                        <input id="field_recReviseTime" type="datetime-local" class="form-control" name="recReviseTime" formControlName="recReviseTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.recRevisor" for="field_recRevisor">Rec Revisor</label>
+                    <input type="text" class="form-control" name="recRevisor" id="field_recRevisor"
+                           formControlName="recRevisor"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isActivated" for="field_isActivated">Is Activated</label>
+                    <input type="text" class="form-control" name="isActivated" id="field_isActivated"
+                           formControlName="isActivated"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.activationTime" for="field_activationTime">Activation Time</label>
+                    <div class="d-flex">
+                        <input id="field_activationTime" type="datetime-local" class="form-control" name="activationTime" formControlName="activationTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.appVersion" for="field_appVersion">App Version</label>
+                    <input type="text" class="form-control" name="appVersion" id="field_appVersion"
+                           formControlName="appVersion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.isOnlyAdminTitle" for="field_isOnlyAdminTitle">Is Only Admin Title</label>
+                    <input type="text" class="form-control" name="isOnlyAdminTitle" id="field_isOnlyAdminTitle"
+                           formControlName="isOnlyAdminTitle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.jobnumber" for="field_jobnumber">Jobnumber</label>
+                    <input type="text" class="form-control" name="jobnumber" id="field_jobnumber"
+                           formControlName="jobnumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                           formControlName="avatar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enName" for="field_enName">En Name</label>
+                    <input type="text" class="form-control" name="enName" id="field_enName"
+                           formControlName="enName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enWorkplace" for="field_enWorkplace">En Workplace</label>
+                    <input type="text" class="form-control" name="enWorkplace" id="field_enWorkplace"
+                           formControlName="enWorkplace"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.enTitleDesc" for="field_enTitleDesc">En Title Desc</label>
+                    <input type="text" class="form-control" name="enTitleDesc" id="field_enTitleDesc"
+                           formControlName="enTitleDesc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.onlyCode" for="field_onlyCode">Only Code</label>
+                    <input type="text" class="form-control" name="onlyCode" id="field_onlyCode"
+                           formControlName="onlyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.hrCardId" for="field_hrCardId">Hr Card Id</label>
+                    <input type="text" class="form-control" name="hrCardId" id="field_hrCardId"
+                           formControlName="hrCardId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.employeeType" for="field_employeeType">Employee Type</label>
+                    <input type="text" class="form-control" name="employeeType" id="field_employeeType"
+                           formControlName="employeeType"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.collectionFmpMicroApp" for="field_collectionFmpMicroApps">Collection Fmp Micro App</label>
+                    <select class="form-control" id="field_collectionFmpMicroApps" multiple name="collectionFmpMicroApps" formControlName="collectionFmpMicroApps">
+                        <option [ngValue]="getSelected(editForm.get('collectionFmpMicroApps')!.value, fmpMicroAppOption)" *ngFor="let fmpMicroAppOption of fmpmicroapps; trackBy: trackById">{{ fmpMicroAppOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplication20201127App.uucUserBaseinfo.microAppGroup" for="field_microAppGroup">Micro App Group</label>
+                    <select class="form-control" id="field_microAppGroup" name="microAppGroup" formControlName="microAppGroup">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="microAppGroupOption.id === editForm.get('microAppGroup')!.value?.id ? editForm.get('microAppGroup')!.value : microAppGroupOption" *ngFor="let microAppGroupOption of microappgroups; trackBy: trackById">{{ microAppGroupOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="managerUser">
+            <h2><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.detail.title">Manager User</span> {{ managerUser.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.parentId">Parent Id</span></dt>
+                <dd>
+                    <span>{{ managerUser.parentId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplication20201127App.ManagerUserType.' + managerUser.type }}">{{ managerUser.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.uucDepartmentTrees">Uuc Department Trees</span></dt>
+                <dd>
+                    <span *ngFor="let uucDepartmentTrees of managerUser.uucDepartmentTrees; let last = last">
+                        <a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTrees?.id, 'view']">{{ uucDepartmentTrees.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplication20201127App.managerUser.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="managerUser.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', managerUser.fmpSubCompany?.id, 'view']">{{ managerUser.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/manager-user-mp', managerUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplication20201127App": {
+    "ddUserPortalRouting": {
+      "home": {
+        "title": "Dd User Portal Routings",
+        "createLabel": "Create a new Dd User Portal Routing",
+        "createOrEditLabel": "Create or edit a Dd User Portal Routing",
+        "notFound": "No Dd User Portal Routings found"
+      },
+      "created": "A new Dd User Portal Routing is created with identifier {{ param }}",
+      "updated": "A Dd User Portal Routing is updated with identifier {{ param }}",
+      "deleted": "A Dd User Portal Routing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dd User Portal Routing {{ id }}?"
+      },
+      "detail": {
+        "title": "Dd User Portal Routing"
+      },
+      "jobCode": "Job Code",
+      "mobile": "Mobile",
+      "microappUrl": "Microapp Url",
+      "injectionFlag": "Injection Flag",
+      "injectionApiUri": "Injection Api Uri",
+      "mucAppId": "Muc App Id"
+    }
+  }
+}
